@@ -1,0 +1,54 @@
+
+body {
+    margin: 0px;
+}
+
+
+
+.headerContainer{
+    border-bottom: 1px solid grey;
+}
+.HeadingAd {
+    margin: 1rem;
+    background-color: rgb(221, 210, 48);
+    height: 100px;
+}
+
+
+
+
+.leftDiv{
+    width: 19%;
+    float: left;
+    border-right: 1px solid grey;
+
+}
+.middleDiv{
+    width: 60%;
+    float: left;
+}
+.rightDiv{
+    width: 19%;
+    float: left;
+    border-left: 1px solid grey;
+}
+
+
+
+.SecondAd {
+    margin: 1rem;
+    background-color: orange;
+    height: 800px;
+}
+
+.MainPart {
+    background-color: darkseagreen;
+    margin: 1rem;
+    height: 800px;
+}
+
+.SidePart {
+    margin: 1rem;
+    background-color: darkgreen;
+    height: 800px;
+}
