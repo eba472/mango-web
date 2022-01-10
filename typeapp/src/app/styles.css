@@ -1,49 +1,90 @@
-/* General CSS */
-body {
-    margin: 0px;
-}
-
-/* Header part css */
-.headerContainer{
-    border-bottom: 1px solid #767676;
-}
-.HeadingAd {
-    margin: 1rem;
-    background-color: #ececec;
-    height: 100px;
-}
-
-
-/* Middle part css */
-.leftDiv{
-    width: 19%;
-    float: left;
-    border-right: 1px solid #767676;
-}
-.SecondAd {
-    margin: 1rem;
-    background-color: #ececec;
-    height: 800px;
-}
-
-
-.middleDiv{
-    width: 60%;
-    float: left;
-}
-.MainPart {
-    background-color: #ececec;
-    margin: 1rem;
-    height: 800px;
-}
-
-.rightDiv{
-    width: 19%;
-    float: left;
-    border-left: 1px solid #767676;
-}
-.SidePart {
-    margin: 1rem;
-    background-color: #ececec;
-    height: 800px;
-}
+    /* General CSS */
+    
+    body {
+        margin: 0px;
+    }
+    /* Header part css */
+    
+    .headerContainer {
+        border-bottom: 1px solid #767676;
+    }
+    
+    .HeadingAd {
+        margin: 1rem;
+        background-color: #ececec;
+        height: 100px;
+    }
+    /* Middle part css */
+    
+    .leftDiv {
+        width: 19%;
+        float: left;
+        border-right: 1px solid #767676;
+    }
+    
+    .SecondAd {
+        margin: 1rem;
+        background-color: #ececec;
+        height: 800px;
+    }
+    
+    .middleDiv {
+        width: 60%;
+        float: left;
+    }
+    
+    .MainPart {
+        background-color: #ececec;
+        margin: 1rem;
+        height: 800px;
+    }
+    
+    .rightDiv {
+        width: 19%;
+        float: left;
+        border-left: 1px solid #767676;
+    }
+    
+    .SidePart {
+        margin: 1rem;
+        background-color: #ececec;
+        height: 800px;
+    }
+    /* user Account part */
+    
+    .UserAccount {
+        padding: 2rem 0;
+        border-bottom: 2px red;
+    }
+    
+    .UserPic {
+        width: 159px;
+        height: 90px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
+    .UserName {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 0px;
+    }
+    
+    .threeSystem {
+        align-items: center;
+        display: flex;
+        height: 3rem;
+        justify-content: center;
+    }
+    /* Practice part */
+    
+    .menuItem {
+        border-bottom: 2px solid #767676;
+        height: 44.5px;
+        margin: 0 2rem;
+        padding: 5px;
+    }
