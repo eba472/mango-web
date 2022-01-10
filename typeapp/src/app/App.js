@@ -25,8 +25,8 @@ function App() {
         </div>
         <div className="middleDiv">
           <div className="MainPart">
-            <TopPart/>
-            <TextToType/>
+            <TopPart />
+            <TextToType />
             <Keyboard />
           </div>
         </div> 
