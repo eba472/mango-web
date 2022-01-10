@@ -2,6 +2,7 @@ import Keyboard from "./keyboard/Keyboard";
 import TextToType from "./topPart/TextToType";
 import TopPart from "./topPart/TopPart";
 import "./styles.css";
+import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 function App() {
   return (
@@ -15,14 +16,16 @@ function App() {
         </div>
         <div className="middleDiv">
           <div className="MainPart">
-            <TopPart/>
-            <TextToType/>
+            <TopPart />
+            <TextToType />
             <Keyboard />
           </div>
         </div>
       </div>
       <div className="rightDiv">
-        <div className="SidePart"></div>
+        <div className="SidePart">
+          <KeyboardIcon />
+        </div>
       </div>
     </div>
   );
