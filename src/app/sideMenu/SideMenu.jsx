@@ -49,6 +49,13 @@ function SideMenu() {
         </div>
       </div>
       <div className="menuItem">
+        <div className="signup">
+          <Link to="/signup">
+              <KeyboardIcon /> SignUp
+          </Link>
+        </div>
+      </div>
+      <div className="menuItem">
         <div className="Practice2">
           <Link to="/">
             <span className="Practice4">
