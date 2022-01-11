@@ -50,23 +50,26 @@ function SideMenu() {
       </div>
       <div className="menuItem">
         <div className="Practice2">
-          <span className="Practice4">
-            <KeyboardIcon /> Practice
-          </span>
+          <Link to="/">
+            <span className="Practice4">
+              <KeyboardIcon /> Practice
+            </span>
+          </Link>
         </div>
       </div>
       <div className="menuItem">
         <div className="Profile2">
-          <span className="ProfileLine">
-            <AssessmentIcon /> Profile
-          </span>
+          <Link to="/profile">
+            <span className="ProfileLine">
+              <AssessmentIcon /> Profile
+            </span>
+          </Link>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="TypingTestLine">
-            <SpeedIcon />
-            TypingTest
+            <SpeedIcon /> TypingTest
           </span>
         </div>
       </div>
