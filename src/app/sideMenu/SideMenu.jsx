@@ -75,9 +75,11 @@ function SideMenu() {
       </div>
       <div className="menuItem">
         <div>
-          <span className="TypingTestLine">
-            <SpeedIcon /> TypingTest
-          </span>
+          <Link to="/TypingTest">
+            <span className="TypingTestLine">
+              <SpeedIcon /> TypingTest
+            </span>
+          </Link>
         </div>
       </div>
       <div className="menuItem">

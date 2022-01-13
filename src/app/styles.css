@@ -138,6 +138,7 @@
             height: 23rem;
             padding: 2px solid black;
         }
+        /* Sign Up part */
         
         .Sign {
             text-align: center;
@@ -180,4 +181,54 @@
         .Logo {
             height: 65px;
             width: 65px;
+        }
+        /* Typing Test */
+        
+        .TypingTest {
+            margin: 1rem;
+            max-width: 55rem;
+            min-width: 35rem;
+            position: relative;
+        }
+        
+        .Time {
+            padding: 8px;
+        }
+        
+        .UpperTime {
+            border-bottom: 1px solid grey;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .GiveText {
+            margin: -1rem;
+            padding: 1rem;
+            height: 500px;
+        }
+        
+        .eachText {
+            font-size: 2rem;
+        }
+        
+        .stText {
+            align-items: baseline;
+            display: flex;
+        }
+        
+        .NumOfText {
+            font-size: 1rem;
+            min-width: 3rem;
+            text-align: right;
+        }
+        
+        .Text {
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            min-width: 40rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }

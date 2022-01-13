@@ -4,7 +4,7 @@ import "./styles.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./pages/profiles/Profile";
 import Signup from "./pages/signup/Signup"
-
+import TypingTest from "./pages/TypingTest/TypingTest"
 function App() {
   return (
     <Router>
@@ -21,6 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/TypingTest" element={<TypingTest />} />
             </Routes>
           </div>
         </div>
