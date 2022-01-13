@@ -138,3 +138,46 @@
             height: 23rem;
             padding: 2px solid black;
         }
+        
+        .Sign {
+            text-align: center;
+            padding-top: 10%;
+        }
+        
+        .SignUp {
+            width: 350px;
+            height: 450px;
+            background-color: rgb(252, 252, 252);
+            text-align: center;
+            display: inline-block;
+            padding-top: 6%;
+        }
+        
+        .Input {
+            display: inline-block;
+            width: 50%;
+            height: 5%;
+            margin: 10px;
+            background-color: #B1D0E0;
+            border: 1px solid grey;
+        }
+        
+        .InputOfSign {
+            display: inline-block;
+            width: 50%;
+            height: 5%;
+            margin: 10px;
+            background-color: #072227;
+            border: 1px solid grey;
+            color: rgb(206, 226, 226);
+        }
+        
+        .ForgotPassword {
+            font-size: 10px;
+            color: #072227;
+        }
+        
+        .Logo {
+            height: 65px;
+            width: 65px;
+        }
