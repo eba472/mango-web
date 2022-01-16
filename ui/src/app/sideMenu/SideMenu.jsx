@@ -51,7 +51,7 @@ function SideMenu() {
       <div className="menuItem">
         <div className="signup">
           <Link to="/signup">
-              <KeyboardIcon /> SignUp
+              <KeyboardIcon /> Login
           </Link>
         </div>
       </div>
@@ -77,8 +77,15 @@ function SideMenu() {
         <div>
           <Link to="/TypingTest">
             <span className="TypingTestLine">
-              <SpeedIcon /> TypingTest
+              <SpeedIcon /> Typing Test
             </span>
+          </Link>
+        </div>
+      </div>
+      <div className="menuItem">
+        <div className="experiment">
+          <Link to="/experiment">
+              <KeyboardIcon /> API Experiment (Internal)
           </Link>
         </div>
       </div>
@@ -94,7 +101,7 @@ function SideMenu() {
         <div>
           <span className="HighScoresLine">
             <EmojiEventsIcon />
-            HighScores
+            High Scores
           </span>
         </div>
       </div>
@@ -110,7 +117,7 @@ function SideMenu() {
         <div>
           <span className="layoutsLine">
             <AlignHorizontalCenterIcon />
-            layouts
+            Layouts
           </span>
         </div>
       </div>
