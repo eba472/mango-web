@@ -1,17 +1,17 @@
-import React from "react";
-import Brightness5Icon from "@mui/icons-material/Brightness5";
-import TextIncreaseIcon from "@mui/icons-material/TextIncrease";
-import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import KeyboardIcon from "@mui/icons-material/Keyboard";
-import AssessmentIcon from "@mui/icons-material/Assessment";
-import SpeedIcon from "@mui/icons-material/Speed";
-import HelpIcon from "@mui/icons-material/Help";
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
-import AlignHorizontalCenterIcon from "@mui/icons-material/AlignHorizontalCenter";
-import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
+import React from 'react';
+import Brightness5Icon from '@mui/icons-material/Brightness5';
+import TextIncreaseIcon from '@mui/icons-material/TextIncrease';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import SpeedIcon from '@mui/icons-material/Speed';
+import HelpIcon from '@mui/icons-material/Help';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
+import AlignHorizontalCenterIcon from '@mui/icons-material/AlignHorizontalCenter';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function SideMenu() {
   return (
@@ -24,7 +24,7 @@ function SideMenu() {
         ></img>
         <span
           className="UserName"
-          style={{ textAlign: "center", fontSize: "20px", paddingTop: "10px" }}
+          style={{ textAlign: 'center', fontSize: '20px', paddingTop: '10px' }}
         >
           john Doe
         </span>

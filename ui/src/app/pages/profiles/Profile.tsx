@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export default function Profile() {
   return (
-    <div style={{ padding: "5px 30px" }}>
+    <div style={{ padding: '5px 30px' }}>
       <div className="myProfile">
         <h1>My profile</h1>
         <p>

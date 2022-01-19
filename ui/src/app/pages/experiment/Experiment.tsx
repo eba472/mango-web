@@ -1,5 +1,5 @@
-import graphQLFetch from "../../../graphQLFetch.js";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import graphQLFetch from '../../../graphQLFetch';
 
 export default function Experiment() {
   const [issues, setIssues] = useState([]);
@@ -26,8 +26,7 @@ export default function Experiment() {
   useEffect(() => {
     loadData();
   }, [loadData]);
-
-  console.log("issues :>> ", issues);
+  console.log('issues', issues);
 
   return (
     <>

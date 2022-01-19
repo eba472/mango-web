@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Signup() {
   return (
@@ -17,7 +17,7 @@ export default function Signup() {
         </button>
         <p className="ForgotPassword">
           <em>
-            {" "}
+            {' '}
             <a
               href="https://en.wikipedia.org/wiki/Web_developer"
               target="_blank"
@@ -28,7 +28,7 @@ export default function Signup() {
         </p>
         <p className="ForgotPassword">
           <em>
-            {" "}
+            {' '}
             <a
               href="https://en.wikipedia.org/wiki/Web_developer"
               target="_blank"

@@ -1,16 +1,12 @@
-import EachKey from "./EachKey";
-import React, { FC } from "react";
+import React, { FC } from 'react';
+import EachKey from './EachKey';
 
-const KeyRow: FC<{ keyRow: string[] }> = ({ keyRow }) => {
-  return (
+const KeyRow: FC<{ keyRow: string[] }> = ({ keyRow }) => (
     <div>
       <div>
-        {keyRow.map((eachKey, index) => {
-          return <EachKey eachKey={eachKey} key={"eachKey_" + String(index)} />;
-        })}
+        {keyRow.map((eachKey, index) => <EachKey eachKey={eachKey} key={`eachKey_${String(index)}`} />)}
       </div>
     </div>
-  );
-};
+);
 
 export default KeyRow;
