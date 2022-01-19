@@ -1,3 +1,4 @@
+import React from "react";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import TextIncreaseIcon from "@mui/icons-material/TextIncrease";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
@@ -33,7 +34,7 @@ function SideMenu() {
           <button
             className="switchDark"
             title="Switch to theme Dark Colors."
-            viewBox="0 0 24 24"
+            view-box="0 0 24 24"
           >
             <Brightness5Icon />
           </button>
@@ -51,7 +52,7 @@ function SideMenu() {
       <div className="menuItem">
         <div className="signup">
           <Link to="/signup">
-              <KeyboardIcon /> Login
+            <KeyboardIcon /> Login
           </Link>
         </div>
       </div>
@@ -85,7 +86,7 @@ function SideMenu() {
       <div className="menuItem">
         <div className="experiment">
           <Link to="/experiment">
-              <KeyboardIcon /> API Experiment (Internal)
+            <KeyboardIcon /> API Experiment (Internal)
           </Link>
         </div>
       </div>

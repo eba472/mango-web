@@ -1,3 +1,5 @@
+import React from "react";
+
 function TopPart() {
   return (
     <table className="Heading" cellPadding="20">

@@ -1,3 +1,5 @@
+import React from "react";
+
 function TextToType() {
   return (
     <div style={{ fontSize: 30, margin: 30 }}>
@@ -9,5 +11,4 @@ function TextToType() {
     </div>
   );
 }
-
 export default TextToType;

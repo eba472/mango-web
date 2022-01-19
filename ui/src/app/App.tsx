@@ -3,9 +3,11 @@ import SideMenu from "./sideMenu/SideMenu";
 import "./styles.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./pages/profiles/Profile";
-import Signup from "./pages/signup/Signup"
-import TypingTest from "./pages/TypingTest/TypingTest"
+import Signup from "./pages/signup/Signup";
+import TypingTest from "./pages/TypingTest/TypingTest";
 import Experiment from "./pages/experiment/Experiment";
+import React from "react";
+
 function App() {
   return (
     <Router>
