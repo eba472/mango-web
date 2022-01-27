@@ -1,8 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home/Home';
-import SideMenu from './sideMenu/SideMenu';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
 import './styles.css';
+
+const { Header, Content, Footer } = Layout;
+import './styles.css';
+import Typing from './pages/typing/Typing';
 import Profile from './pages/profiles/Profile';
 import Signup from './pages/signup/Signup';
 import TypingTest from './pages/TypingTest/TypingTest';
@@ -11,28 +14,40 @@ import Experiment from './pages/experiment/Experiment';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <div className="headerContainer">
-          <div className="HeadingAd"></div>
-        </div>
-        <div className="leftDiv">
-          <div className="SecondAd"></div>
-        </div>
-        <div className="middleDiv">
-          <div className="MainPart">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/TypingTest" element={<TypingTest />} />
-              <Route path="/experiment" element={<Experiment />} />
-            </Routes>
-          </div>
-        </div>
-        <div className="rightDiv">
-          <SideMenu />
-        </div>
-      </div>
+      <Layout>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+            <Link to="/">
+              <Menu.Item key="0">My Logo</Menu.Item>
+            </Link>
+            <Link to="/dic">
+              <Menu.Item key="1">Dictionary</Menu.Item>
+            </Link>
+            <Link to="/typing">
+              <Menu.Item key="2">Typing</Menu.Item>
+            </Link>
+            <Link to="/games">
+              <Menu.Item key="3">Games</Menu.Item>
+            </Link>
+          </Menu>
+        </Header>
+        <Content
+          className="site-layout"
+          style={{ padding: '0 50px', marginTop: 64 }}
+        >
+          <Routes>
+            <Route path="typing" element={<Typing />}>
+              <Route path="profile" element={<Profile />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="TypingTest" element={<TypingTest />} />
+              <Route path="experiment" element={<Experiment />} />
+            </Route>
+          </Routes>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
+      </Layout>
     </Router>
   );
 }

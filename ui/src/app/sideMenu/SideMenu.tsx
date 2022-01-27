@@ -51,23 +51,21 @@ function SideMenu() {
       </div>
       <div className="menuItem">
         <div className="signup">
-          <Link to="/signup">
+          <Link to="/typing/signup">
             <KeyboardIcon /> Login
           </Link>
         </div>
       </div>
       <div className="menuItem">
         <div className="Practice2">
-          <Link to="/">
-            <span className="Practice4">
-              <KeyboardIcon /> Practice
-            </span>
-          </Link>
+          <span className="Practice4">
+            <KeyboardIcon /> Practice
+          </span>
         </div>
       </div>
       <div className="menuItem">
         <div className="Profile2">
-          <Link to="/profile">
+          <Link to="/typing/profile">
             <span className="ProfileLine">
               <AssessmentIcon /> Profile
             </span>
@@ -76,7 +74,7 @@ function SideMenu() {
       </div>
       <div className="menuItem">
         <div>
-          <Link to="/TypingTest">
+          <Link to="/typing/TypingTest">
             <span className="TypingTestLine">
               <SpeedIcon /> Typing Test
             </span>
@@ -85,7 +83,7 @@ function SideMenu() {
       </div>
       <div className="menuItem">
         <div className="experiment">
-          <Link to="/experiment">
+          <Link to="/typing/experiment">
             <KeyboardIcon /> API Experiment (Internal)
           </Link>
         </div>
@@ -133,5 +131,6 @@ function SideMenu() {
     </div>
   );
 }
+
 
 export default SideMenu;

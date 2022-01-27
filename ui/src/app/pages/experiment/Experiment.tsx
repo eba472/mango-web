@@ -23,9 +23,11 @@ export default function Experiment() {
   //         }
   //       }`;
   // }
-  useEffect(() => {
-    loadData();
-  }, [loadData]);
+
+  // useEffect(() => {
+  //   loadData();
+  // }, [loadData]);
+
   console.log('issues', issues);
 
   return (
