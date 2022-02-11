@@ -27,6 +27,7 @@
         "": "never"
       }
     ],
+    "trailing-comma": "off",
     "no-console": "warn"
   }
 }

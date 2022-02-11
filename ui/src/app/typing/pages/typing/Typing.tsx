@@ -1,8 +1,6 @@
+import SideMenu from 'app/typing/sideMenu/SideMenu';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import '../../styles.css';
-
-import SideMenu from 'app/sideMenu/SideMenu';
 
 function Typing() {
   return (

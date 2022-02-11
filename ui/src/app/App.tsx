@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-import './styles.css';
 import { UserAddOutlined } from '@ant-design/icons';
-
-const { Header, Content, Footer } = Layout;
-import './styles.css';
-import Typing from './pages/typing/Typing';
-import Profile from './pages/profiles/Profile';
-import Signup from './pages/signup/Signup';
-import TypingTest from './pages/TypingTest/TypingTest';
-import Experiment from './pages/experiment/Experiment';
+import Typing from './typing/pages/typing/Typing';
+import Profile from './typing/pages/profiles/Profile';
+import Signup from './typing/pages/signup/Signup';
+import TypingTest from './typing/pages/TypingTest/TypingTest';
+import Experiment from './typing/pages/experiment/Experiment';
 import Dictionary from './dictionary/Dictionary';
+import './styles.css';
+import { useTranslation } from 'react-i18next';
+const { Header, Content, Footer } = Layout;
 
 function App() {
+  const { t, i18n } = useTranslation('common');
   return (
     <Router>
       <Layout>
@@ -52,7 +52,7 @@ function App() {
                     key="1"
                     style={{ color: 'white', fontSize: '20px' }}
                   >
-                    Dictionary
+                    {t('menu.dictionary')}
                   </Menu.Item>
                 </Link>
                 <Link to="/typing">
@@ -97,7 +97,9 @@ function App() {
                 </Link>
               </Menu>
             </div>
-            <div style={{ marginRight: '20px' }}>
+            <div style={{ marginRight: '20px', width: '150px' }}>
+              <button onClick={() => i18n.changeLanguage('mn')}>mn</button>
+              <button onClick={() => i18n.changeLanguage('en')}>en</button>
               <UserAddOutlined
                 style={{
                   color: 'white',
