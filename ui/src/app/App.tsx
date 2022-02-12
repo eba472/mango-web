@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
-import { UserAddOutlined } from '@ant-design/icons'
+import { GlobalOutlined, UserAddOutlined } from '@ant-design/icons'
 import Typing from './typing/pages/typing/Typing'
 import Profile from './typing/pages/profiles/Profile'
 import Signup from './typing/pages/signup/Signup'
@@ -10,6 +10,7 @@ import Experiment from './typing/pages/experiment/Experiment'
 import Dictionary from './dictionary/Dictionary'
 import './styles.css'
 import { useTranslation } from 'react-i18next'
+import SubMenu from 'antd/lib/menu/SubMenu'
 const { Header, Content, Footer } = Layout
 
 function App() {
@@ -54,26 +55,29 @@ function App() {
                 </Menu.Item>
 
                 <Menu.Item
+                  disabled
                   key='3'
                   style={{ color: 'white', fontSize: '20px' }}
-                  
                 >
                   <Link to='/games'>{t('menu.games')}</Link>
                 </Menu.Item>
 
                 <Menu.Item
+                  disabled
                   key='4'
                   style={{ color: 'white', fontSize: '20px' }}
                 >
                   <Link to='/pronunciation'>{t('menu.pronunciation')}</Link>
                 </Menu.Item>
                 <Menu.Item
+                  disabled
                   key='5'
                   style={{ color: 'white', fontSize: '20px' }}
                 >
                   <Link to='/grammer'>{t('menu.grammer')}</Link>
                 </Menu.Item>
                 <Menu.Item
+                  disabled
                   key='6'
                   style={{ color: 'white', fontSize: '20px' }}
                 >
@@ -81,11 +85,36 @@ function App() {
                 </Menu.Item>
               </Menu>
             </div>
-            <div style={{ marginRight: '20px', width: '150px' }}>
-              <button onClick={() => i18n.changeLanguage('mn')} style={{ backgroundColor:'white', color:'#e76f51', fontSize:'25px' }}>mn</button>
-              <button onClick={() => i18n.changeLanguage('en')} style={{ backgroundColor:'white', color:'#e76f51', fontSize:'25px' }}>en</button>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Menu
+                mode='horizontal'
+                style={{
+                  backgroundColor: '#e76f51',
+                }}
+              >
+                <SubMenu
+                  style={{ color: 'white', fontSize: '20px' }}
+                  key='SubMenu'
+                  icon={<GlobalOutlined />}
+                  title={t('menu.changeLanguage')}
+                >
+                  <Menu.Item
+                    key='setting:1'
+                    onClick={() => i18n.changeLanguage('en')}
+                  >
+                    English
+                  </Menu.Item>
+                  <Menu.Item
+                    key='setting:2'
+                    onClick={() => i18n.changeLanguage('mn')}
+                  >
+                    Mongolian
+                  </Menu.Item>
+                </SubMenu>
+              </Menu>
               <UserAddOutlined
                 style={{
+                  marginRight: '20px',
                   color: 'white',
                   fontSize: '40px',
                   paddingTop: '0.8%',

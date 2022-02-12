@@ -5,9 +5,12 @@
         "games": "Тоглоом",
         "pronunciation": "Дуудлага",
         "grammer": "Дүрэм",
-        "idioms": "Хэлц үг"
+        "idioms": "Хэлц үг",
+        "changeLanguage": "Хэл солих"
     },
     "SearchComponent": {
-        "dictionary": "Толь бичиг"
+        "dictionary": "Толь бичиг",
+        "search": "Хайх",
+        "inputSearchWord": "Хайх үгээ оруулаарай"
     }
 }

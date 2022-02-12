@@ -5,10 +5,13 @@
         "games": "Games",
         "pronunciation": "Pronunciation",
         "grammer": "Grammer",
-        "idioms": "Idioms"
+        "idioms": "Idioms",
+        "changeLanguage": "Languages"
 
     },
     "SearchComponent": {
-        "dictionary": "Dictionary"
+        "dictionary": "Dictionary",
+        "search": "Search",
+        "inputSearchWord": "Input a search word"
     }
 }
