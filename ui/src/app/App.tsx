@@ -56,37 +56,34 @@ function App() {
                 <Menu.Item
                   key='3'
                   style={{ color: 'white', fontSize: '20px' }}
-                  disabled
+                  
                 >
-                  <Link to='/games'>Games</Link>
+                  <Link to='/games'>{t('menu.games')}</Link>
                 </Menu.Item>
 
                 <Menu.Item
                   key='4'
                   style={{ color: 'white', fontSize: '20px' }}
-                  disabled
                 >
-                  <Link to='/pronunciation'>Pronunciation</Link>
+                  <Link to='/pronunciation'>{t('menu.pronunciation')}</Link>
                 </Menu.Item>
                 <Menu.Item
                   key='5'
                   style={{ color: 'white', fontSize: '20px' }}
-                  disabled
                 >
-                  <Link to='/grammer'>Grammer</Link>
+                  <Link to='/grammer'>{t('menu.grammer')}</Link>
                 </Menu.Item>
                 <Menu.Item
                   key='6'
                   style={{ color: 'white', fontSize: '20px' }}
-                  disabled
                 >
-                  <Link to='/idioms'>Idioms</Link>
+                  <Link to='/idioms'>{t('menu.idioms')} </Link>
                 </Menu.Item>
               </Menu>
             </div>
             <div style={{ marginRight: '20px', width: '150px' }}>
-              <button onClick={() => i18n.changeLanguage('mn')}>mn</button>
-              <button onClick={() => i18n.changeLanguage('en')}>en</button>
+              <button onClick={() => i18n.changeLanguage('mn')} style={{ backgroundColor:'white', color:'#e76f51', fontSize:'25px' }}>mn</button>
+              <button onClick={() => i18n.changeLanguage('en')} style={{ backgroundColor:'white', color:'#e76f51', fontSize:'25px' }}>en</button>
               <UserAddOutlined
                 style={{
                   color: 'white',

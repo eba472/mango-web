@@ -27,5 +27,5 @@ ReactDOM.render(
       <App />
     </I18nextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )

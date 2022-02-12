@@ -1,6 +1,13 @@
 {
-  "menu": {
-    "dictionary": "Толь бичиг",
-    "typing": "Шивих дасгал"
-  }
+    "menu": {
+        "dictionary": "Толь бичиг",
+        "typing": "Шивих дасгал",
+        "games": "Тоглоом",
+        "pronunciation": "Дуудлага",
+        "grammer": "Дүрэм",
+        "idioms": "Хэлц үг"
+    },
+    "SearchComponent": {
+        "dictionary": "Толь бичиг"
+    }
 }

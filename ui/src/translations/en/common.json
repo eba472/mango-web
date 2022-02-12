@@ -1,6 +1,14 @@
 {
-  "menu": {
-    "dictionary": "Dictionary",
-    "typing": "Typing"
-  }
+    "menu": {
+        "dictionary": "Dictionary",
+        "typing": "Typing",
+        "games": "Games",
+        "pronunciation": "Pronunciation",
+        "grammer": "Grammer",
+        "idioms": "Idioms"
+
+    },
+    "SearchComponent": {
+        "dictionary": "Dictionary"
+    }
 }
