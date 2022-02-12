@@ -1,8 +1,8 @@
-// import React, { useEffect, useState } from 'react';
-// import graphQLFetch from '../../../../graphQLFetch';
+// import React, { useEffect, useState } from 'react'
+// import graphQLFetch from '../../../../graphQLFetch'
 
 // export default function Experiment() {
-//   const [issues, setIssues] = useState([]);
+//   const [issues, setIssues] = useState([])
 
 //   async function loadData() {
 //     const query = `query {
@@ -10,10 +10,10 @@
 //             id title status owner
 //             created effort due
 //           }
-//         }`;
-//     const data = await graphQLFetch(query);
+//         }`
+//     const data = await graphQLFetch(query)
 //     if (data) {
-//       setIssues(data.issueList);
+//       setIssues(data.issueList)
 //     }
 //   }
 
@@ -22,25 +22,25 @@
 //           issueAdd(issue: $issue) {
 //             id
 //           }
-//         }`;
+//         }`
 //   }
 
 //   useEffect(() => {
-//     loadData();
-//   }, [loadData]);
+//     loadData()
+//   }, [loadData])
 
-//   console.log('issues', issues);
+//   console.log('issues', issues)
 
 //   return (
 //     <>
 //       <h1>Issue Tracker</h1>
 //     </>
-//   );
+//   )
 // }
 
 
 //Placeholder
-import React from 'react';
+import React from 'react'
 export default function Experiment() {
-  return <div />;
+  return <div />
 }

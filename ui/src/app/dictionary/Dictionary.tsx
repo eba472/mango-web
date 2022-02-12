@@ -1,5 +1,5 @@
-import React from 'react';
-import SearchComponent from './components/SearchComponent';
+import React from 'react'
+import SearchComponent from './components/SearchComponent'
 
 const Dictionary = () => {
   return (
@@ -23,7 +23,7 @@ const Dictionary = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dictionary;
+export default Dictionary

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Input, Space } from 'antd';
+import React from 'react'
+import { Input, Space } from 'antd'
 
-const { Search } = Input;
-const onSearch = (value: string) => console.log(value);
+const { Search } = Input
+const onSearch = (value: string) => console.log(value)
 const SearchComponent = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginTop:'40px' }} >
@@ -19,7 +19,7 @@ const SearchComponent = () => {
       </Space>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SearchComponent;
+export default SearchComponent

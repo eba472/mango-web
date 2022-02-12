@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function TextToType() {
   return (
@@ -9,6 +9,6 @@ function TextToType() {
       ac tortor dignissim convallis aenean. Ullamcorper morbi tincidunt ornare
       massa eget.
     </div>
-  );
+  )
 }
-export default TextToType;
+export default TextToType

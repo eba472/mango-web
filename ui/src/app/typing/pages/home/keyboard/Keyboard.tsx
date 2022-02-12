@@ -1,6 +1,6 @@
-import CreateKeyboard from './components/CreateKeyboard';
-import './keyboard.css';
-import React from 'react';
+import CreateKeyboard from './components/CreateKeyboard'
+import './keyboard.css'
+import React from 'react'
 
 function Keyboard() {
   return (
@@ -9,7 +9,7 @@ function Keyboard() {
     >
       <CreateKeyboard />
     </div>
-  );
+  )
 }
 
-export default Keyboard;
+export default Keyboard

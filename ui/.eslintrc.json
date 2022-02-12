@@ -15,7 +15,11 @@
   },
   "plugins": ["@typescript-eslint", "import"],
   "rules": {
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+
     "@typescript-eslint/no-use-before-define": "off",
+    "comma-dangle": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -27,7 +31,6 @@
         "": "never"
       }
     ],
-    "trailing-comma": "off",
     "no-console": "warn"
   }
 }

@@ -1,6 +1,6 @@
-import SideMenu from 'app/typing/sideMenu/SideMenu';
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import SideMenu from 'app/typing/sideMenu/SideMenu'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 function Typing() {
   return (
@@ -25,7 +25,7 @@ function Typing() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Typing;
+export default Typing

@@ -1,7 +1,7 @@
-import React from 'react';
-import Keyboard from './keyboard/Keyboard';
-import TextToType from './topPart/TextToType';
-import TopPart from './topPart/TopPart';
+import React from 'react'
+import Keyboard from './keyboard/Keyboard'
+import TextToType from './topPart/TextToType'
+import TopPart from './topPart/TopPart'
 
 export default function Home() {
   return (
@@ -10,5 +10,5 @@ export default function Home() {
       <TextToType />
       <Keyboard />
     </div>
-  );
+  )
 }

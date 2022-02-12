@@ -1,5 +1,6 @@
 {
-    "menu": {
-        "dictionary": "Dictionary"
-    }
+  "menu": {
+    "dictionary": "Dictionary",
+    "typing": "Typing"
+  }
 }

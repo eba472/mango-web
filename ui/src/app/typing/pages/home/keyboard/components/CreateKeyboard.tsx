@@ -1,6 +1,6 @@
-import KeyRow from './KeyRow';
-import '../keyboard.css';
-import React from 'react';
+import KeyRow from './KeyRow'
+import '../keyboard.css'
+import React from 'react'
 
 function CreateKeyboard() {
   const keyLayout: string[][] = [
@@ -9,7 +9,7 @@ function CreateKeyboard() {
     ['caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'enter'],
     ['done', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '?'],
     ['space'],
-  ];
+  ]
 
   return (
     <div className="keyboard">
@@ -17,7 +17,7 @@ function CreateKeyboard() {
         {keyLayout.map((keyRow, index) => <KeyRow keyRow={keyRow} key={`KeyRow_${String(index)}`} />)}
       </div>
     </div>
-  );
+  )
 }
 
-export default CreateKeyboard;
+export default CreateKeyboard

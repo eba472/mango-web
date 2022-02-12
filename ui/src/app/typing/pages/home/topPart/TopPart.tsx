@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function TopPart() {
   return (
@@ -11,7 +11,7 @@ function TopPart() {
         </tr>
       </thead>
     </table>
-  );
+  )
 }
 
-export default TopPart;
+export default TopPart

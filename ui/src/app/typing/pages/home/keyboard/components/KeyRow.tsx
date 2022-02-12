@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import EachKey from './EachKey';
+import React, { FC } from 'react'
+import EachKey from './EachKey'
 
 const KeyRow: FC<{ keyRow: string[] }> = ({ keyRow }) => (
     <div>
@@ -7,6 +7,6 @@ const KeyRow: FC<{ keyRow: string[] }> = ({ keyRow }) => (
         {keyRow.map((eachKey, index) => <EachKey eachKey={eachKey} key={`eachKey_${String(index)}`} />)}
       </div>
     </div>
-);
+)
 
-export default KeyRow;
+export default KeyRow
