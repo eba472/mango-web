@@ -6,11 +6,19 @@
         "pronunciation": "Дуудлага",
         "grammer": "Дүрэм",
         "idioms": "Хэлц үг",
-        "changeLanguage": "Хэл солих"
+        "changeLanguage": "Хэл солих",
+        "mongolian": "Монгол хэл",
+        "english": "Англи хэл"
     },
     "SearchComponent": {
         "dictionary": "Толь бичиг",
         "search": "Хайх",
         "inputSearchWord": "Хайх үгээ оруулаарай"
+    },
+    "SideBar": {
+        "definition": "Үгийн утга",
+        "picture": "Зурагнууд",
+        "synonym": "Төсөөтэй үгc",
+        "example": "Жишээ өгүүлбэрүүд"
     }
 }

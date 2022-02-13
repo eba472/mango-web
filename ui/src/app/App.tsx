@@ -89,7 +89,7 @@ function App() {
               <Menu
                 mode='horizontal'
                 style={{
-                  backgroundColor: '#e76f51',
+                  backgroundColor: '#e76f51', width: '200px',
                 }}
               >
                 <SubMenu
@@ -102,13 +102,13 @@ function App() {
                     key='setting:1'
                     onClick={() => i18n.changeLanguage('en')}
                   >
-                    English
+                    {t('menu.english')}
                   </Menu.Item>
                   <Menu.Item
                     key='setting:2'
                     onClick={() => i18n.changeLanguage('mn')}
                   >
-                    Mongolian
+                    {t('menu.mongolian')}
                   </Menu.Item>
                 </SubMenu>
               </Menu>

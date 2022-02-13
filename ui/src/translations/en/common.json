@@ -6,12 +6,20 @@
         "pronunciation": "Pronunciation",
         "grammer": "Grammer",
         "idioms": "Idioms",
-        "changeLanguage": "Languages"
+        "changeLanguage": "Languages",
+        "english": "English",
+        "mongolian": "Mongolian"
 
     },
     "SearchComponent": {
         "dictionary": "Dictionary",
         "search": "Search",
         "inputSearchWord": "Input a search word"
+    },
+    "SideBar": {
+        "definition": "Definition",
+        "picture": "Pictures",
+        "synonym": "Synonyms",
+        "example": "Examples"
     }
 }
