@@ -11,6 +11,8 @@ import Dictionary from './dictionary/Dictionary'
 import './styles.css'
 import { useTranslation } from 'react-i18next'
 import SubMenu from 'antd/lib/menu/SubMenu'
+import Games from './games/Games'
+
 const { Header, Content, Footer } = Layout
 
 function App() {
@@ -55,7 +57,7 @@ function App() {
                 </Menu.Item>
 
                 <Menu.Item
-                  disabled
+                  
                   key='3'
                   style={{ color: 'white', fontSize: '20px' }}
                 >
@@ -130,6 +132,8 @@ function App() {
         >
           <Routes>
             <Route path='dictionary' element={<Dictionary />} />
+            <Route path='Games' element={<Games />} />
+            
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />
               <Route path='logIn' element={<Signup />} />
