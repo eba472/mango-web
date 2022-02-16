@@ -1,6 +1,7 @@
 import SideMenu from 'app/typing/sideMenu/SideMenu'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import LeftDiv from 'app/typing/pages/LeftDiv/LeftDiv'
 
 function Typing() {
   return (
@@ -13,7 +14,9 @@ function Typing() {
           <div className="HeadingAd"></div>
         </div>
         <div className="leftDiv">
-          <div className="SecondAd"></div>
+          <div className="SecondAd">
+            <LeftDiv />
+          </div>
         </div>
         <div className="middleDiv">
           <div className="MainPart">

@@ -132,7 +132,8 @@ function App() {
             <Route path='dictionary' element={<Dictionary />} />
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />
-              <Route path='signup' element={<Signup />} />
+              <Route path='logIn' element={<Signup />} />
+              {/* <Route path='signup' element={<Signup />} /> */}
               <Route path='TypingTest' element={<TypingTest />} />
               <Route path='experiment' element={<Experiment />} />
             </Route>

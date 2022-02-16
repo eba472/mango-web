@@ -20,5 +20,10 @@
         "picture": "Зурагнууд",
         "synonym": "Төсөөтэй үгc",
         "example": "Жишээ өгүүлбэрүүд"
+    },
+    "LeftDiv": {
+        "logIn": "Нэвтрэх",
+        "Practice": "Дасгал",
+        "Profile": "Profile"
     }
 }

@@ -24,7 +24,7 @@ function SideMenu() {
         ></img>
         <span
           className="UserName"
-          style={{ textAlign: 'center', fontSize: '20px', paddingTop: '10px' }}
+          style={{ alignItems: 'center', fontSize: '20px', paddingTop: '10px' }}
         >
           john Doe
         </span>
@@ -52,14 +52,14 @@ function SideMenu() {
       <div className="menuItem">
         <div className="signup">
           <Link to="/typing/signup">
-            <KeyboardIcon /> Login
+            <KeyboardIcon />  Login
           </Link>
         </div>
       </div>
       <div className="menuItem">
         <div className="Practice2">
           <span className="Practice4">
-            <KeyboardIcon /> Practice
+            <KeyboardIcon />  Practice
           </span>
         </div>
       </div>
@@ -67,7 +67,7 @@ function SideMenu() {
         <div className="Profile2">
           <Link to="/typing/profile">
             <span className="ProfileLine">
-              <AssessmentIcon /> Profile
+              <AssessmentIcon />  Profile
             </span>
           </Link>
         </div>
@@ -76,7 +76,7 @@ function SideMenu() {
         <div>
           <Link to="/typing/TypingTest">
             <span className="TypingTestLine">
-              <SpeedIcon /> Typing Test
+              <SpeedIcon />  Typing Test
             </span>
           </Link>
         </div>
@@ -84,47 +84,42 @@ function SideMenu() {
       <div className="menuItem">
         <div className="experiment">
           <Link to="/typing/experiment">
-            <KeyboardIcon /> API Experiment (Internal)
+            <KeyboardIcon />  API Experiment (Internal)
           </Link>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="HelpLine">
-            <HelpIcon />
-            Help
+            <HelpIcon />  Help
           </span>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="HighScoresLine">
-            <EmojiEventsIcon />
-            High Scores
+            <EmojiEventsIcon />  High Scores
           </span>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="MultiplaylerLine">
-            <TimeToLeaveIcon />
-            Multiplayler
+            <TimeToLeaveIcon />  Multiplayler
           </span>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="layoutsLine">
-            <AlignHorizontalCenterIcon />
-            Layouts
+            <AlignHorizontalCenterIcon />  Layouts
           </span>
         </div>
       </div>
       <div className="menuItem">
         <div>
           <span className="TextToolsLine">
-            <HomeRepairServiceIcon />
-            TextTools
+            <HomeRepairServiceIcon />  TextTools
           </span>
         </div>
       </div>

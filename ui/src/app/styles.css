@@ -85,16 +85,21 @@ body {
     display: flex;
     height: 3rem;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
 
 /* Practice part */
 
 .menuItem {
-    border-bottom: 2px solid #767676;
-    height: 44.5px;
-    margin: 0 2rem;
-    padding: 5px;
+    align-items: center;
+    border-bottom: 1px solid #767676;
+    height: 44px;
+    padding: 0 1rem;
+    margin: 0 1rem;
+    padding-top: 5px;
+    color: #264653;
+    font-size: 14.8px;
 }
 
 .allStatistic {
@@ -255,4 +260,8 @@ body {
 
 .site-layout .site-layout-background {
     background: #fff;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #e76f51 !important;
 }
