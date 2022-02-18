@@ -12,6 +12,7 @@ import './styles.css'
 import { useTranslation } from 'react-i18next'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import Games from './games/Games'
+import Registration from './header/registration/Registration'
 
 const { Header, Content, Footer } = Layout
 
@@ -56,11 +57,7 @@ function App() {
                   <Link to='/typing'>{t('menu.typing')}</Link>
                 </Menu.Item>
 
-                <Menu.Item
-                  
-                  key='3'
-                  style={{ color: 'white', fontSize: '20px' }}
-                >
+                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/games'>{t('menu.games')}</Link>
                 </Menu.Item>
 
@@ -91,7 +88,8 @@ function App() {
               <Menu
                 mode='horizontal'
                 style={{
-                  backgroundColor: '#e76f51', width: '200px',
+                  backgroundColor: '#e76f51',
+                  width: '200px',
                 }}
               >
                 <SubMenu
@@ -114,14 +112,7 @@ function App() {
                   </Menu.Item>
                 </SubMenu>
               </Menu>
-              <UserAddOutlined
-                style={{
-                  marginRight: '20px',
-                  color: 'white',
-                  fontSize: '40px',
-                  paddingTop: '0.8%',
-                }}
-              />
+              <Registration />
             </div>
           </div>
         </Header>
@@ -133,7 +124,7 @@ function App() {
           <Routes>
             <Route path='dictionary' element={<Dictionary />} />
             <Route path='Games' element={<Games />} />
-            
+
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />
               <Route path='logIn' element={<Signup />} />
