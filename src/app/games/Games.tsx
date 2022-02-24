@@ -17,8 +17,12 @@ const Games = () => {
       <div id='modal-container' onClick={onClick}>
         <div className='modal-background'>
           <div className='modal'>
-            <h2>I'm a Modal ll</h2>
-            <p>Hear me roar.</p>
+            <h2>🐫</h2>
+            <p>what is this animal?</p>
+            <p>A. Fish</p>
+            <p>B. Camel</p>
+            <p>C. Horse</p>
+            <p>D. Car</p>
           </div>
         </div>
       </div>

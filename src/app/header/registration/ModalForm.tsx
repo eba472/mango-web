@@ -28,7 +28,7 @@ const ModalForm: React.FC<CollectionCreateFormProps> = ({
   return (
     <Modal
       visible={visible}
-      title={isUser ? 'Sign in' : 'Sign up'}
+      title={isUser ? 'Sign in' : 'Sign up' } 
       okText={isUser ? 'Sign in' : 'Sign up'}
       cancelText='Cancel'
       onCancel={onCancel}
