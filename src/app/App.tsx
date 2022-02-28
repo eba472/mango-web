@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
-import { GlobalOutlined, UserAddOutlined } from '@ant-design/icons'
+import { GlobalOutlined } from '@ant-design/icons'
 import Typing from './typing/pages/typing/Typing'
 import Profile from './typing/pages/profiles/Profile'
 import Signup from './typing/pages/signup/Signup'
@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import Games from './games/Games'
 import Registration from './header/registration/Registration'
+import ChooseLevel from './games/game/snake/ChooseLevel'
 
 const { Header, Content, Footer } = Layout
 
@@ -123,8 +124,9 @@ function App() {
         >
           <Routes>
             <Route path='dictionary' element={<Dictionary />} />
-            <Route path='Games' element={<Games />} />
 
+            <Route path='games' element={<Games />} />
+            <Route path='games/snake' element={<ChooseLevel />} />
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />
               <Route path='logIn' element={<Signup />} />
