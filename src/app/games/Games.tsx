@@ -1,4 +1,6 @@
 import React from 'react'
+import ChooseLevel from './components/ChooseLevel'
+import GamePage from './components/GamePage'
 import QuestionModal from './components/QuestionModal'
 
 const Games = () => {
@@ -7,7 +9,10 @@ const Games = () => {
       <div id='mainGame'>
         
       </div>
+      <GamePage />
+      <ChooseLevel />
       <QuestionModal />
+      
     </>
   )
 }
