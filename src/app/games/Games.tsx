@@ -1,5 +1,4 @@
 import React from 'react'
-import ChooseLevel from './game/snake/ChooseLevel'
 import GamePage from './components/GamePage'
 import QuestionModal from './components/QuestionModal'
 
@@ -10,7 +9,6 @@ const Games = () => {
         
       </div>
       <GamePage />
-      {/* <ChooseLevel /> */}
       <QuestionModal />
       
     </>

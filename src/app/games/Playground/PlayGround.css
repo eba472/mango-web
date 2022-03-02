@@ -1,0 +1,23 @@
+.normalBlock {
+    background-color: #E9C46A;
+}
+
+.roadBlock {
+    background-color: #E76F51;
+    border: 0.5px solid white;
+}
+
+.questionBlock {
+    background-color: #264653;
+    border: 0.5px solid white;
+}
+
+.endStartBlock {
+    background-color: #F4A261;
+    border: 0.5px solid white;
+    font-size: larger;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20px
+}

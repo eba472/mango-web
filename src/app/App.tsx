@@ -14,6 +14,8 @@ import SubMenu from 'antd/lib/menu/SubMenu'
 import Games from './games/Games'
 import Registration from './header/registration/Registration'
 import ChooseLevel from './games/game/snake/ChooseLevel'
+import Rule from './games/gameRule/Rule'
+import SnakePlay from './games/Playground/SnakePlay'
 
 const { Header, Content, Footer } = Layout
 
@@ -127,6 +129,10 @@ function App() {
 
             <Route path='games' element={<Games />} />
             <Route path='games/snake' element={<ChooseLevel />} />
+            <Route path='games/snake/level1' element={<Rule />} />
+            <Route path='games/snake/level1/play' element={<SnakePlay />} />
+
+
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />
               <Route path='logIn' element={<Signup />} />
