@@ -15,7 +15,7 @@ import Games from './games/Games'
 import Registration from './header/registration/Registration'
 import ChooseLevel from './games/game/snake/ChooseLevel'
 import Rule from './games/gameRule/Rule'
-import SnakePlay from './games/Playground/SnakePlay'
+import SnakePlay from './games/playground/level1'
 
 const { Header, Content, Footer } = Layout
 

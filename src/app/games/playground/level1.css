@@ -21,3 +21,8 @@
     text-align: center;
     padding-top: 20px
 }
+.playerBlock {
+    background-color: aliceblue;
+    font-size: 45px;
+    text-align: center;
+}
