@@ -1,6 +1,8 @@
 import { Button } from 'antd'
 import React, { CSSProperties, useState } from 'react'
 import './level1.css'
+import QuestionModal from './question/questionModal'
+
 
 const containerStyle: CSSProperties = {
   width: '100vw',
@@ -31,21 +33,52 @@ const initialGameMap = [
   [0, 1, 0, 1, 0, 1, 3, 0, 0, 1, 1, 1, 0, 0, 0],
   [4, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
-  // const pathArr = [{ x: 3, y: 1 }, { x: 3, y: 2} , { x: 2, y: 2} ]
-
+const pathArr = [{ x: 3, y: 0 }, { x: 3, y: 1 }, { x: 2, y: 1 }, { x: 1, y: 1 }, { x: 1, y: 2 }, { x: 1, y: 3 }, { x: 2, y: 3 },
+{ x: 3, y: 3 }, { x: 3, y: 4 }, { x: 3, y: 5 }, { x: 2, y: 5 }, { x: 2, y: 6 }, { x: 1, y: 6 }, { x: 0, y: 6 }, { x: 0, y: 7 },
+{ x: 0, y: 8 }, { x: 1, y: 8 }, { x: 1, y: 9 }, { x: 2, y: 9 }, { x: 2, y: 10 }, { x: 2, y: 11 }, { x: 1, y: 11 }, { x: 0, y: 11 },
+{ x: 0, y: 12 }, { x: 0, y: 13 }, { x: 1, y: 13 }, { x: 1, y: 14 }]
 const SnakePlay = () => {
-  const [currPoss, setCurrPoss] = useState({ x: 3, y: 1 })
-  gameMap[currPoss['x']][currPoss['y']] = 6
-  // pathArr[currPoss + 1]
-  function changeLocation() {
-    gameMap[currPoss['x']][currPoss['y']] =
-      initialGameMap[currPoss['x']][currPoss['y']]
-    setCurrPoss({ x: 3, y: currPoss['y'] + 1 })
+  const [visible, setVisible] = useState(false)
+  const [currPoss, setCurrPoss] = useState({ x: 3, y: 0 })
+
+  const QuestionOn = (values: any) => {
+    console.log('QuestionOn: ', values)
+    setVisible(false)
   }
+
+  gameMap[currPoss['x']][currPoss['y']] = 6
+  
+  let index = pathArr.indexOf(currPoss)
+
+  function changeLocation() {
+    
+    gameMap[currPoss['x']][currPoss['y']] =
+      initialGameMap[currPoss['x']][currPoss['y']]       
+      const thisPos = pathArr[index + 1]
+      setCurrPoss(thisPos)
+    setVisible(initialGameMap[thisPos['x']][thisPos['y']] === 3)
+
+  }
+
 
   return (
     <>
       <Button onClick={changeLocation}>Click here to move!</Button>
+      <Button
+        onClick={() => {
+          setVisible(true)
+        }}
+        style={{
+          color: 'blue',
+        }}
+      >Modal</Button>
+      <QuestionModal
+        visible={visible}
+        QuestionOn={QuestionOn}
+        onCancel={() => {
+          setVisible(false)
+        }}
+      />
       <div style={containerStyle}>
         <div style={gameBoard}>
           {gameMap.map((eachRow) =>
