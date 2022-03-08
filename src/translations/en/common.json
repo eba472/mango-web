@@ -8,8 +8,8 @@
         "idioms": "Idioms",
         "changeLanguage": "Languages",
         "english": "English",
-        "mongolian": "Mongolian"
-
+        "mongolian": "Mongolian",
+        "myCourse": "My course"
     },
     "SearchComponent": {
         "dictionary": "Dictionary",

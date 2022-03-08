@@ -12,10 +12,13 @@ import './styles.css'
 import { useTranslation } from 'react-i18next'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import Games from './games/Games'
-import Registration from './header/registration/Registration'
-import ChooseLevel from './games/game/snake/ChooseLevel'
-import Rule from './games/gameRule/Rule'
-import SnakePlay from './games/playground/level1'
+import Registration from './components/header/registration/Registration'
+import ChooseLevel from './games/games/snake/ChooseLevel'
+import Rule from './games/games/snake/gameRule/Rule'
+import SnakePlay from './games/games/snake/playground/level1'
+import MyCourse from './myCourse/MyCourse'
+import Dashboard from './myCourse/dashboard/Dashboard'
+import GradesAndQuizzes from './myCourse/gradesAndQuizzes/GradesAndQuizzes'
 
 const { Header, Content, Footer } = Layout
 
@@ -47,44 +50,27 @@ function App() {
                     style={{ color: 'white', paddingLeft: '0px' }}
                   >
                     <img
-                      src='/Mango.png'
+                      src='/placeHolderLogo.png'
                       alt='imgLogo'
                       style={{ width: '64px', height: '64px' }}
                     ></img>
                   </Menu.Item>
                 </Link>
+
                 <Menu.Item key='1' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/dictionary'>{t('menu.dictionary')}</Link>
                 </Menu.Item>
                 <Menu.Item key='2' style={{ color: 'white', fontSize: '20px' }}>
-                  <Link to='/typing'>{t('menu.typing')}</Link>
-                </Menu.Item>
-
-                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/games'>{t('menu.games')}</Link>
                 </Menu.Item>
 
-                <Menu.Item
-                  disabled
-                  key='4'
-                  style={{ color: 'white', fontSize: '20px' }}
-                >
-                  <Link to='/pronunciation'>{t('menu.pronunciation')}</Link>
+                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}>
+                  <Link to='/myCourse'>{t('menu.myCourse')}</Link>
                 </Menu.Item>
-                <Menu.Item
-                  disabled
-                  key='5'
-                  style={{ color: 'white', fontSize: '20px' }}
-                >
-                  <Link to='/grammer'>{t('menu.grammer')}</Link>
-                </Menu.Item>
-                <Menu.Item
-                  disabled
-                  key='6'
-                  style={{ color: 'white', fontSize: '20px' }}
-                >
-                  <Link to='/idioms'>{t('menu.idioms')} </Link>
-                </Menu.Item>
+
+                {/* <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
+                  <Link to='/typing'>{t('menu.typing')}</Link>
+                </Menu.Item> */}
               </Menu>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -132,6 +118,10 @@ function App() {
             <Route path='games/snake/level1' element={<Rule />} />
             <Route path='games/snake/level1/play' element={<SnakePlay />} />
 
+            <Route path='myCourse' element={<MyCourse />}>
+              <Route path='dashBoard' element={<Dashboard />} />
+              <Route path='quizzes' element={<GradesAndQuizzes />} />
+            </Route>
 
             <Route path='typing' element={<Typing />}>
               <Route path='profile' element={<Profile />} />

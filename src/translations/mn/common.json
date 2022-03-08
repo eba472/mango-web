@@ -8,7 +8,8 @@
         "idioms": "Хэлц үг",
         "changeLanguage": "Хэл солих",
         "mongolian": "Монгол хэл",
-        "english": "Англи хэл"
+        "english": "Англи хэл",
+        "myCourse": "Хичээл"
     },
     "SearchComponent": {
         "dictionary": "Толь бичиг",
