@@ -34,18 +34,22 @@ const Submenu = () => {
         <Menu.Item key='1' icon={<PieChartOutlined />}>
           <Link to='/myCourse/Dashboard'>Dashboard</Link>
         </Menu.Item>
-        <Menu.Item key='2' icon={<DesktopOutlined />}>
+        <SubMenu key='sub1' icon={<MailOutlined />} title='Quizzes and Grades'>
+          <Menu.Item key='2'>
           <Link to='/myCourse/Quizzes'>Quizzes</Link>
-        </Menu.Item>
-        <Menu.Item key='3' icon={<ContainerOutlined />}>
-          Option 3
-        </Menu.Item>
-        <SubMenu key='sub1' icon={<MailOutlined />} title='Navigation One'>
-          <Menu.Item key='5'>Option 5</Menu.Item>
-          <Menu.Item key='6'>Option 6</Menu.Item>
-          <Menu.Item key='7'>Option 7</Menu.Item>
-          <Menu.Item key='8'>Option 8</Menu.Item>
+          </Menu.Item>
+          <Menu.Item key='3'>
+          <Link to='/myCourse/Grades'>Grades</Link>
+          </Menu.Item>
         </SubMenu>
+        
+        <Menu.Item key='4' icon={<DesktopOutlined />}>
+          <Link to='/myCourse/MyFiles'>My files</Link>
+        </Menu.Item>
+        <Menu.Item key='5' icon={<ContainerOutlined />}>
+        <Link to='/myCourse/homework'>Homework</Link>
+        </Menu.Item>
+        
         <SubMenu key='sub2' icon={<AppstoreOutlined />} title='Navigation Two'>
           <Menu.Item key='9'>Option 9</Menu.Item>
           <Menu.Item key='10'>Option 10</Menu.Item>

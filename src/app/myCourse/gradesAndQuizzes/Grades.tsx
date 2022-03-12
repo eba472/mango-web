@@ -3,7 +3,6 @@ import { Table, Space } from 'antd';
 import { Link } from 'react-router-dom';
 import { ColumnType } from 'antd/lib/table';
 import { LockOutlined } from '@ant-design/icons';
-import HomeworkQuestion from './HomeworkQuestion';
 
 const data = [
   {
@@ -34,8 +33,7 @@ const columns: ColumnType<object>[] = [
     dataIndex: 'name',
     key: 'name',
     render: (name: string) => {
-      return <HomeworkQuestion />
-      // <Link to={`/myCourse/Exam/${name}`} >{name}</Link>
+      return <Link to={`/myCourse/Exam/${name}`} >{name}</Link>
     },
   },
   {
@@ -64,17 +62,16 @@ const columns: ColumnType<object>[] = [
     key: 'action',
     render: (record: any) => (
       <Space size="middle">
-        <a href="URL" ><LockOutlined /> </a>
+        <a href="https://www.google.com/search?q=wikipedia&oq=wkife&aqs=chrome.1.69i57j0i10l9.4388j0j7&sourceid=chrome&ie=UTF-8" ><LockOutlined /></a>
       </Space>
     ),
   },
 ];
 
-const Homework = () => {
-
+const Grades = () => {
   return <div>
     <Table columns={columns} dataSource={data} style={{ width: '900px', backgroundColor: '#4E89AE' }} />
   </div>
 }
 
-export default Homework
+export default Grades

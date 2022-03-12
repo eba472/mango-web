@@ -18,7 +18,10 @@ import Rule from './games/games/snake/gameRule/Rule'
 import SnakePlay from './games/games/snake/playground/level1'
 import MyCourse from './myCourse/MyCourse'
 import Dashboard from './myCourse/dashboard/Dashboard'
-import GradesAndQuizzes from './myCourse/gradesAndQuizzes/GradesAndQuizzes'
+import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
+import Grades from './myCourse/gradesAndQuizzes/Grades'
+import MyFiles from './myCourse/myFiles/MyFiles'
+import Homework from './myCourse/homework/Homework'
 
 const { Header, Content, Footer } = Layout
 
@@ -120,7 +123,13 @@ function App() {
 
             <Route path='myCourse' element={<MyCourse />}>
               <Route path='dashBoard' element={<Dashboard />} />
-              <Route path='quizzes' element={<GradesAndQuizzes />} />
+              <Route path='quizzes' element={<Quizzes />} />
+              <Route path='grades' element={<Grades />} />
+              <Route path='MyFiles' element={<MyFiles />} />
+              <Route path='homework' element={<Homework />} />
+
+
+
             </Route>
 
             <Route path='typing' element={<Typing />}>
