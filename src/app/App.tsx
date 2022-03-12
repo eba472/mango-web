@@ -22,6 +22,7 @@ import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
 import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
+import Flashcard from './flashcard/Flashcard'
 
 const { Header, Content, Footer } = Layout
 
@@ -55,7 +56,12 @@ function App() {
                     <img
                       src='/Logo.png'
                       alt='imgLogo'
-                      style={{ width: '64px', height: '50px', padding:'5px', marginLeft:'10px' }}
+                      style={{
+                        width: '64px',
+                        height: '50px',
+                        padding: '5px',
+                        marginLeft: '10px',
+                      }}
                     ></img>
                   </Menu.Item>
                 </Link>
@@ -63,19 +69,50 @@ function App() {
                 <Menu.Item key='1' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/dictionary'>{t('menu.dictionary')}</Link>
                 </Menu.Item>
-                <Menu.Item key='2' style={{ color: 'white', fontSize: '20px' }}  disabled={true}>
-                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding:'0px 5px ', color:'#000', fontSize:'8px', fontWeight:'bold' }} >
-                  <Link to='/games' >{t('menu.games')}</Link>
+                <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
+                  <Link to='/flashcard'>Flashcard</Link>
+                </Menu.Item>
+                <Menu.Item
+                  key='2'
+                  style={{ color: 'white', fontSize: '20px' }}
+                  disabled={true}
+                >
+                  <Badge
+                    count={t('menu.coming soon')}
+                    size='small'
+                    offset={[12, -9]}
+                    style={{
+                      backgroundColor: 'white',
+                      padding: '0px 5px ',
+                      color: '#000',
+                      fontSize: '8px',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    <Link to='/games'>{t('menu.games')}</Link>
                   </Badge>
-
-                </Menu.Item>
-                  
-                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}  disabled={true}>
-                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding:'0px 5px ', color:'#000', fontSize:'8px', fontWeight:'bold' }} >
-                  <Link to='/myCourse'>{t('menu.myCourse')}</Link>
-                </Badge>
                 </Menu.Item>
 
+                <Menu.Item
+                  key='3'
+                  style={{ color: 'white', fontSize: '20px' }}
+                  disabled={true}
+                >
+                  <Badge
+                    count={t('menu.coming soon')}
+                    size='small'
+                    offset={[12, -9]}
+                    style={{
+                      backgroundColor: 'white',
+                      padding: '0px 5px ',
+                      color: '#000',
+                      fontSize: '8px',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    <Link to='/myCourse'>{t('menu.myCourse')}</Link>
+                  </Badge>
+                </Menu.Item>
 
                 {/* <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/typing'>{t('menu.typing')}</Link>
@@ -121,6 +158,7 @@ function App() {
         >
           <Routes>
             <Route path='dictionary' element={<Dictionary />} />
+            <Route path='flashcard' element={<Flashcard />} />
 
             <Route path='games' element={<Games />} />
             <Route path='games/snake' element={<ChooseLevel />} />
@@ -133,9 +171,6 @@ function App() {
               <Route path='grades' element={<Grades />} />
               <Route path='MyFiles' element={<MyFiles />} />
               <Route path='homework' element={<Homework />} />
-
-
-
             </Route>
 
             <Route path='typing' element={<Typing />}>
