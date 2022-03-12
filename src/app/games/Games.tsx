@@ -5,6 +5,7 @@ const Games = () => {
   return (
     <>
       <div id='mainGame'></div>
+      
       <GamePage />
     </>
   )
