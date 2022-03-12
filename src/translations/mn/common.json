@@ -9,7 +9,8 @@
         "changeLanguage": "Хэл солих",
         "mongolian": "Монгол хэл",
         "english": "Англи хэл",
-        "myCourse": "Хичээл"
+        "myCourse": "Хичээл",
+        "coming soon": "Тун удахгүй"
     },
     "SearchComponent": {
         "dictionary": "Толь бичиг",

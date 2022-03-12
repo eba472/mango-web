@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import { Badge, Layout, Menu } from 'antd'
 import { GlobalOutlined } from '@ant-design/icons'
 import Typing from './typing/pages/typing/Typing'
 import Profile from './typing/pages/profiles/Profile'
@@ -53,9 +53,9 @@ function App() {
                     style={{ color: 'white', paddingLeft: '0px' }}
                   >
                     <img
-                      src='/placeHolderLogo.png'
+                      src='/Logo.png'
                       alt='imgLogo'
-                      style={{ width: '64px', height: '64px' }}
+                      style={{ width: '64px', height: '50px', padding:'5px', marginLeft:'10px' }}
                     ></img>
                   </Menu.Item>
                 </Link>
@@ -63,13 +63,19 @@ function App() {
                 <Menu.Item key='1' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/dictionary'>{t('menu.dictionary')}</Link>
                 </Menu.Item>
-                <Menu.Item key='2' style={{ color: 'white', fontSize: '20px' }}>
-                  <Link to='/games'>{t('menu.games')}</Link>
+                <Menu.Item key='2' style={{ color: 'white', fontSize: '20px' }}  disabled={true}>
+                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding:'0px 5px ', color:'#000', fontSize:'8px', fontWeight:'bold' }} >
+                  <Link to='/games' >{t('menu.games')}</Link>
+                  </Badge>
+
+                </Menu.Item>
+                  
+                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}  disabled={true}>
+                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding:'0px 5px ', color:'#000', fontSize:'8px', fontWeight:'bold' }} >
+                  <Link to='/myCourse'>{t('menu.myCourse')}</Link>
+                </Badge>
                 </Menu.Item>
 
-                <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }}>
-                  <Link to='/myCourse'>{t('menu.myCourse')}</Link>
-                </Menu.Item>
 
                 {/* <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/typing'>{t('menu.typing')}</Link>

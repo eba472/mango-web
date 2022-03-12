@@ -9,7 +9,8 @@
         "changeLanguage": "Languages",
         "english": "English",
         "mongolian": "Mongolian",
-        "myCourse": "My course"
+        "myCourse": "My course",
+        "coming soon": "Coming coon"
     },
     "SearchComponent": {
         "dictionary": "Dictionary",
@@ -27,4 +28,5 @@
         "Practice": "Practice",
         "Profile": "Profile"
     }
+
 }
