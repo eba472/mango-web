@@ -1,4 +1,4 @@
-import { Form, Modal } from 'antd'
+import { Button, Form, Modal } from 'antd'
 import React, { useState } from 'react'
 import SignIn from './SignIn'
 import Signup from './Signup'
@@ -20,6 +20,27 @@ firebase.initializeApp({
 
 const auth = firebase.auth()
 const firestore = firebase.firestore()
+const engWords = 'qwerty'
+const monWords = 'qwerty'
+// const messageRef = firestore.collection('Eng-Mon dictionary');
+
+// const query = messageRef.orderBy('createdAt').limit(25);
+
+  // const [messages] = useCollectionData(query, {idField: 'id'});
+  // const [formValue, setFormValue] = useState('');
+  // const sendDictData = async() => {
+  //   await messageRef.add({
+  //     text: formValue,
+  //     // createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  //   })
+  //   setFormValue('');
+  // }
+
+  const dataAdd = () => firestore.collection('engMonDict').doc(`${engWords}`).set({
+    mn: `${monWords}`
+  }).then(() => {
+    console.log("haha")
+  })
 interface Values {
   title: string
   description: string
@@ -66,6 +87,7 @@ const ModalForm: React.FC<CollectionCreateFormProps> = ({
           })
       }}
     >
+      <Button onClick={dataAdd}>Data add button</Button>
       {isUser ? (
         <SignIn setIsUser={setIsUser} />
       ) : (
