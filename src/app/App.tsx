@@ -23,7 +23,8 @@ import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
 import Flashcard from './flashcard/Flashcard'
-
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
 const { Header, Content, Footer } = Layout
 
 function App() {

@@ -2,7 +2,23 @@ import React from 'react'
 import 'antd/dist/antd.css'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { Link } from 'react-router-dom'
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth'; 
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Persistence } from '@firebase/auth';
 
+firebase.initializeApp({
+  apiKey: "AIzaSyDOpnWwgDajQaMpmncBUL0Rv5CcLMUsVkk",
+  authDomain: "aplus-4ae14.firebaseapp.com",
+  projectId: "aplus-4ae14",
+  storageBucket: "aplus-4ae14.appspot.com",
+  messagingSenderId: "1065455070773",
+  appId: "1:1065455070773:web:5f16f442e1ed6b28becb7c",
+  measurementId: "G-YZLRQ0WT1X"
+})
+
+const auth: any = firebase.auth();
 const wrapperCol = {
   offset: 8,
   span: 10,
@@ -14,7 +30,12 @@ const SignIn: React.FC<SignInProps> = ({ setIsUser }) => {
   const onFinish = (values = String) => {
     console.log('Success:', values)
   }
-
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+  const [user] = useAuthState(auth);
+  console.log(`user`, user)
   return (
     <Form
       name='basic'
@@ -35,6 +56,7 @@ const SignIn: React.FC<SignInProps> = ({ setIsUser }) => {
             backgroundColor: '#fff',
             color: '#e76f51',
           }}
+          onClick={signInWithGoogle}
         >
           Sign in with Google
         </Button>
