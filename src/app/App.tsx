@@ -22,8 +22,12 @@ import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
 import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
-
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth'; 
 const { Header, Content, Footer } = Layout
+
+
 
 function App() {
   const { t, i18n } = useTranslation('common')
