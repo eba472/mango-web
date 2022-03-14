@@ -6,7 +6,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth'; 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Persistence } from '@firebase/auth';
 
 firebase.initializeApp({
   apiKey: "AIzaSyDOpnWwgDajQaMpmncBUL0Rv5CcLMUsVkk",
@@ -30,10 +29,7 @@ const SignIn: React.FC<SignInProps> = ({ setIsUser }) => {
   const onFinish = (values = String) => {
     console.log('Success:', values)
   }
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
+  
   const [user] = useAuthState(auth);
   console.log(`user`, user)
   return (
@@ -56,7 +52,7 @@ const SignIn: React.FC<SignInProps> = ({ setIsUser }) => {
             backgroundColor: '#fff',
             color: '#e76f51',
           }}
-          onClick={signInWithGoogle}
+          
         >
           Sign in with Google
         </Button>

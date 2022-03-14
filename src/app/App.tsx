@@ -1,21 +1,12 @@
-import React, { CSSProperties, useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
-import { Badge, Layout, Menu } from 'antd'
-import {
-  ContainerOutlined,
-  DesktopOutlined,
-  PieChartOutlined,
-} from '@ant-design/icons'
-import Typing from './typing/pages/typing/Typing'
-import Profile from './typing/pages/profiles/Profile'
-import Signup from './typing/pages/signup/Signup'
-import TypingTest from './typing/pages/TypingTest/TypingTest'
-import Experiment from './typing/pages/experiment/Experiment'
-import Dictionary from './dictionary/Dictionary'
-import './styles.css'
+import { Button, Layout, Menu } from 'antd'
+
 import { useTranslation } from 'react-i18next'
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
+import MainMenu from './components/menu/MainMenu'
 import Games from './games/Games'
-import Registration from './components/header/registration/Registration'
 import ChooseLevel from './games/games/snake/ChooseLevel'
 import Rule from './games/games/snake/gameRule/Rule'
 import SnakePlay from './games/games/snake/playground/level1'
@@ -25,19 +16,21 @@ import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
 import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
-import Flashcard from './flashcard/Flashcard'
-import 'firebase/compat/firestore'
-import 'firebase/compat/auth'
-const { Header, Content, Footer } = Layout
+import Dictionary from './dictionary/Dictionary'
+import { Content } from 'antd/lib/layout/layout'
+import Registration from './components/header/registration/Registration'
+import './styles.css'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import firebase from 'firebase/compat/app'
 
+const { Header, Footer } = Layout
+const auth = firebase.auth()
 function App() {
   const { t, i18n } = useTranslation('common')
   const [language, setLanguage] = useState('mn')
-  const [toggleCollapsed, setToggleCollapsed] = useState(false)
-
-  const [sideMenuVisible, setSideMenuVisible] = useState(false)
-
-  const menuItemStyle: CSSProperties = { color: 'white', fontSize: '20px' }
+  const [user] = useAuthState(auth as any)
+  console.log('user', user)
+  console.log('user?.displayName', user?.displayName)
   return (
     <Router>
       <Layout>
@@ -108,86 +101,15 @@ function App() {
             </div>
           </div>
         </Header>
-        <div
-          style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}
-        >
-          <div
-            id='mainMenuOnTheSide'
-            style={{ width: '20%', minWidth: 200 }}
-            onMouseEnter={() => setToggleCollapsed(false)}
-            onMouseLeave={() => setToggleCollapsed(true)}
-          >
-            <Menu
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              mode='vertical'
-              theme='light'
-              inlineCollapsed={toggleCollapsed}
-            >
-              <Menu.Item
-                key='1'
-                style={menuItemStyle}
-                icon={<PieChartOutlined />}
-              >
-                <Link to='/dictionary'>{t('menu.dictionary')}</Link>
-              </Menu.Item>
-
-              <Menu.Item
-                key='2'
-                style={menuItemStyle}
-                disabled={true}
-                icon={<DesktopOutlined />}
-              >
-                <Badge
-                  count={t('menu.comingSoon')}
-                  size='small'
-                  offset={[12, -9]}
-                  style={{
-                    backgroundColor: 'white',
-                    padding: '0px 5px ',
-                    color: '#000',
-                    fontSize: '8px',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  <Link to='/games'>{t('menu.games')}</Link>
-                </Badge>
-              </Menu.Item>
-
-              <Menu.Item
-                key='3'
-                style={menuItemStyle}
-                disabled={true}
-                icon={<ContainerOutlined />}
-              >
-                <Badge
-                  count={t('menu.comingSoon')}
-                  size='small'
-                  offset={[12, -9]}
-                  style={{
-                    backgroundColor: 'white',
-                    padding: '0px 5px ',
-                    color: '#000',
-                    fontSize: '8px',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  <Link to='/myCourse'>{t('menu.myCourse')}</Link>
-                </Badge>
-              </Menu.Item>
-              <Registration
-                sideMenuVisible={sideMenuVisible}
-                setSideMenuVisible={setSideMenuVisible}
-              />
-            </Menu>
-          </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <MainMenu />
           <Content
             className='site-layout'
-            style={{ padding: '0px', marginTop: 64, width: '70%' }}
+            style={{ padding: '0px', marginTop: 64, width: '80%' }}
           >
             <Routes>
               <Route path='dictionary' element={<Dictionary />} />
-
+              <Route path='register' element={<Registration />} />
               <Route path='games' element={<Games />} />
               <Route path='games/snake' element={<ChooseLevel />} />
               <Route path='games/snake/level1' element={<Rule />} />

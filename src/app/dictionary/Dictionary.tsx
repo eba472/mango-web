@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import SearchComponent from './components/SearchComponent'
 import axios from 'axios'
 import { Button, Collapse } from 'antd'
-import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 const { Panel } = Collapse
 
 const Dictionary = () => {

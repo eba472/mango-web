@@ -257,5 +257,15 @@ body {
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #e76f51 !important;
+  background-color: #f9c802 !important;
+}
+.ant-menu-item {
+  margin: 15px !important;
+}
+.ant-menu-item-selected {
+  color: white !important;
+}
+
+.ant-menu-item-active {
+  color: black !important;
 }

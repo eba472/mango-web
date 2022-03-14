@@ -1,31 +1,33 @@
 {
-    "menu": {
-        "dictionary": "Толь бичиг",
-        "typing": "Шивих дасгал",
-        "games": "Тоглоом",
-        "pronunciation": "Дуудлага",
-        "grammer": "Дүрэм",
-        "idioms": "Хэлц үг",
-        "changeLanguage": "Хэл солих",
-        "mongolian": "Монгол хэл",
-        "english": "Англи хэл",
-        "myCourse": "Хичээл",
-        "comingSoon": "Тун удахгүй"
-    },
-    "SearchComponent": {
-        "dictionary": "Толь бичиг",
-        "search": "Хайх",
-        "inputSearchWord": "үг хайх"
-    },
-    "SideBar": {
-        "definition": "Үгийн утга",
-        "picture": "Зурагнууд",
-        "synonym": "Төсөөтэй үгc",
-        "example": "Жишээ өгүүлбэрүүд"
-    },
-    "LeftDiv": {
-        "logIn": "Нэвтрэх",
-        "Practice": "Дасгал",
-        "Profile": "Profile"
-    }
+  "menu": {
+    "dictionary": "Толь бичиг",
+    "typing": "Шивих дасгал",
+    "games": "Тоглоом",
+    "pronunciation": "Дуудлага",
+    "grammer": "Дүрэм",
+    "idioms": "Хэлц үг",
+    "changeLanguage": "Хэл солих",
+    "mongolian": "Монгол хэл",
+    "english": "Англи хэл",
+    "myCourse": "Хичээл",
+    "comingSoon": "Тун удахгүй"
+  },
+  "SearchComponent": {
+    "dictionary": "Толь бичиг",
+    "search": "Хайх",
+    "inputSearchWord": "үг хайх"
+  },
+  "SideBar": {
+    "definition": "Үгийн утга",
+    "picture": "Зурагнууд",
+    "synonym": "Төсөөтэй үгc",
+    "example": "Жишээ өгүүлбэрүүд"
+  },
+  "LeftDiv": {
+    "signIn": "Нэвтрэх",
+    "signInLong": "Та энд дарж Нэвтэрнэ үү",
+    "signUp": "Бүртгүүлэх",
+    "Practice": "Дасгал",
+    "Profile": "Profile"
+  }
 }

@@ -1,44 +1,48 @@
-import { UserAddOutlined } from '@ant-design/icons'
-import { Menu } from 'antd'
-import React from 'react'
+import { Button } from 'antd'
+import firebase from 'firebase/compat/app'
+import React, { useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { useTranslation } from 'react-i18next'
-import ModalForm from './ModalForm'
 
-const Registration = ({
-  sideMenuVisible,
-  setSideMenuVisible,
-}: {
-  sideMenuVisible: boolean
-  setSideMenuVisible: (sideMenuVisible: boolean) => void
-}) => {
+firebase.initializeApp({
+  apiKey: 'AIzaSyDOpnWwgDajQaMpmncBUL0Rv5CcLMUsVkk',
+  authDomain: 'aplus-4ae14.firebaseapp.com',
+  projectId: 'aplus-4ae14',
+  storageBucket: 'aplus-4ae14.appspot.com',
+  messagingSenderId: '1065455070773',
+  appId: '1:1065455070773:web:5f16f442e1ed6b28becb7c',
+  measurementId: 'G-YZLRQ0WT1X',
+})
+
+const auth = firebase.auth()
+const firestore = firebase.firestore()
+
+const Registration = () => {
   const { t } = useTranslation('common')
-
-  const onSignIn = (values: any) => {
-    console.log('onSignIn: ', values)
-    setSideMenuVisible(false)
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)
   }
-  const onSignUp = (values: any) => {
-    console.log('onSignUp: ', values)
-    setSideMenuVisible(false)
-  }
-  console.log('sideMenuVisible :>> ', sideMenuVisible)
   return (
-    <Menu.Item
-      key='4'
-      style={{ color: 'white', fontSize: '20px' }}
-      icon={<UserAddOutlined />}
-      onClick={() => setSideMenuVisible(true)}
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
     >
-      {t('LeftDiv.logIn')}
-      <ModalForm
-        visible={sideMenuVisible}
+      <Button style={{ margin: 50 }} onClick={signInWithGoogle}>
+        {t('LeftDiv.signInLong')}
+      </Button>
+      {/* <ModalForm
+        visible={visible}
         onSignIn={onSignIn}
         onSignUp={onSignUp}
         onCancel={() => {
-          setSideMenuVisible(false)
+          setVisible(false)
         }}
-      />
-    </Menu.Item>
+      /> */}
+    </div>
   )
 }
 export default Registration

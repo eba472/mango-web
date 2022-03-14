@@ -10,7 +10,7 @@
         "english": "English",
         "mongolian": "Mongolian",
         "myCourse": "My course",
-        "comingSoon": "Coming coon"
+        "comingSoon": "Coming soon"
     },
     "SearchComponent": {
         "dictionary": "Dictionary",
@@ -24,7 +24,9 @@
         "example": "Examples"
     },
     "LeftDiv": {
-        "logIn": "Login",
+        "signIn": "Sign in",
+        "signInLong": "Click here to sign in!",
+        "signUp": "Sign up",
         "Practice": "Practice",
         "Profile": "Profile"
     }
