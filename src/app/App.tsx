@@ -83,7 +83,9 @@ function App() {
                       Please sign in with Google here!
                     </span>
                   ) : (
-                    <span>{'Welcome ' + user?.displayName + '!        '}</span>
+                    <span style={{ color: 'black' }}>
+                      {'Welcome ' + user?.displayName + '!        '}
+                    </span>
                   )}
                 </Menu.Item>
                 <Menu.Item key='2'>
