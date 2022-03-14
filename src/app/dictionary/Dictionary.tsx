@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SearchComponent from './components/SearchComponent'
 import axios from 'axios'
 import { Button, Collapse } from 'antd'
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 const { Panel } = Collapse
 
 const Dictionary = () => {
@@ -32,6 +33,13 @@ const Dictionary = () => {
     }
     return ans
   }
+
+  // var x = document.getElementById("myAudio");
+
+  // function playAudio() {
+  //   x.play();
+  // }
+
   return (
     <div>
       <SearchComponent
@@ -50,46 +58,53 @@ const Dictionary = () => {
             <p>Word: {wordInfo?.word}</p>
             Pronunciations:{' '}
             {wordInfo?.phonetics.map((phonetic: any) => {
-              return <Button>{phonetic.text}</Button>
+              return <>
+                <Button>{phonetic.text}</Button>
+                {/* <Audio >
+                  <source src="horse.ogg" type="audio/ogg"></source>
+                    </Audio>
+                    <Button onclick={playAudio()} type="button" >Play Audio</Button> */}
+
+                  </>
             })}
-            <p>{wordInfo?.origin}</p>
-            <div>
-              {wordInfo?.meanings.map((meaning: any) => {
-                return (
-                  <Collapse
-                    defaultActiveKey={['1']}
-                    onChange={callback}
-                    style={{ padding: '20px' }}
-                  >
-                    <Panel header={meaning.partOfSpeech} key='1'>
-                      <div>
-                        {meaning.definitions.map((def: any) => {
-                          return (
+                  <p>{wordInfo?.origin}</p>
+                  <div>
+                    {wordInfo?.meanings.map((meaning: any) => {
+                      return (
+                        <Collapse
+                          defaultActiveKey={['1']}
+                          onChange={callback}
+                          style={{ padding: '20px' }}
+                        >
+                          <Panel header={meaning.partOfSpeech} key='1'>
                             <div>
-                              <h3>Definition: {def.definition}</h3>
-                              <p>Example sentence: {def.example}</p>
-                              <p>
-                                {def.synonyms &&
-                                  'Synonyms: ' + arrToString(def.antonyms)}
-                              </p>
-                              <p>
-                                {def.antonyms &&
-                                  'Antonyms: ' + arrToString(def.antonyms)}
-                              </p>
+                              {meaning.definitions.map((def: any) => {
+                                return (
+                                  <div>
+                                    <h3>Definition: {def.definition}</h3>
+                                    <p>Example sentence: {def.example}</p>
+                                    <p>
+                                      {def.synonyms &&
+                                        'Synonyms: ' + arrToString(def.antonyms)}
+                                    </p>
+                                    <p>
+                                      {def.antonyms &&
+                                        'Antonyms: ' + arrToString(def.antonyms)}
+                                    </p>
+                                  </div>
+                                )
+                              })}
                             </div>
-                          )
-                        })}
-                      </div>
-                    </Panel>
-                  </Collapse>
-                )
-              })}
-            </div>
-          </Panel>
-        </Collapse>
+                          </Panel>
+                        </Collapse>
+                      )
+                    })}
+                  </div>
+                </Panel>
+              </Collapse>
       )}
-    </div>
-  )
+          </div>
+          )
 }
 
-export default Dictionary
+          export default Dictionary
