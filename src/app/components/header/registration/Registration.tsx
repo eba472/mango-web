@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
-import ModalForm from './ModalForm'
 import { UserAddOutlined } from '@ant-design/icons'
+import { Menu } from 'antd'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import ModalForm from './ModalForm'
+
 
 const Registration = () => {
-  const [visible, setVisible] = useState(false)
+  const { t } = useTranslation('common')
+
+  const [visible, setVisible] = useState(true)
 
   const onSignIn = (values: any) => {
     console.log('onSignIn: ', values)
@@ -15,19 +20,10 @@ const Registration = () => {
   }
 
   return (
-    <div>
-      <UserAddOutlined
-        onClick={() => {
-          setVisible(true)
-        }}
-        style={{
-          marginRight: '20px',
-          color: 'white',
-          fontSize: '40px',
-          paddingTop: '0.8%',
-        }}
-      />
-
+    <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }} icon={<UserAddOutlined />} onClick={() => {
+      setVisible(true)
+    }}>
+      {t('LeftDiv.logIn')}
       <ModalForm
         visible={visible}
         onSignIn={onSignIn}
@@ -36,7 +32,9 @@ const Registration = () => {
           setVisible(false)
         }}
       />
-    </div>
+
+    </Menu.Item>
+
   )
 }
 export default Registration

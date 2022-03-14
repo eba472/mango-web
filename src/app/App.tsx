@@ -24,6 +24,7 @@ import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
 
 
+import { UserAddOutlined } from '@ant-design/icons'
 
 import { Button } from 'antd';
 import {
@@ -35,11 +36,12 @@ import {
 import Flashcard from './flashcard/Flashcard'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
+import { enableNetwork } from 'firebase/firestore'
 const { Header, Content, Footer } = Layout
 
 function App() {
   const { t, i18n } = useTranslation('common')
-
+  const [language, setLanguage] = useState('en')
   const [toggleCollapsed, setToggleCollapsed] = useState(false)
 
 
@@ -51,7 +53,6 @@ function App() {
             position: 'fixed',
             zIndex: 1,
             width: '100%',
-            backgroundColor: '#e76f51',
             padding: '0px',
           }}
         >
@@ -61,7 +62,7 @@ function App() {
               <Menu
                 mode='horizontal'
                 style={{
-                  backgroundColor: '#e76f51',
+                  backgroundColor: '#fff',
                 }}>
                 <Link to='/'>
                   <Menu.Item
@@ -75,7 +76,7 @@ function App() {
                         width: '64px',
                         height: '50px',
                         padding: '5px',
-                        marginLeft: '10px',
+                        marginLeft: '18px',
                       }}
                     ></img>
                   </Menu.Item>
@@ -88,31 +89,30 @@ function App() {
               <Menu
                 mode='horizontal'
                 style={{
-                  backgroundColor: '#e76f51',
-                  width: '200px',
+                  width: '150px',
                 }}
               >
-                <SubMenu
-                  style={{ color: 'white', fontSize: '20px' }}
-                  key='SubMenu'
-                  icon={<GlobalOutlined />}
-                  title={t('menu.changeLanguage')}
+                {language === 'mn' ? <Menu.Item
+                  key='setting:1'
+                  onClick={() => {
+                    i18n.changeLanguage('en')
+                    setLanguage('en')
+                  }}
                 >
-                  <Menu.Item
-                    key='setting:1'
-                    onClick={() => i18n.changeLanguage('en')}
-                  >
-                    {t('menu.english')}
-                  </Menu.Item>
-                  <Menu.Item
-                    key='setting:2'
-                    onClick={() => i18n.changeLanguage('mn')}
-                  >
-                    {t('menu.mongolian')}
-                  </Menu.Item>
-                </SubMenu>
+                  {t('menu.english')}
+                </Menu.Item> : <Menu.Item
+                  key='setting:2'
+                  onClick={() => {
+                    i18n.changeLanguage('mn')
+                    setLanguage('mn')
+                  }}
+                >
+                  {t('menu.mongolian')}
+                </Menu.Item>}
+
+
               </Menu>
-              <Registration />
+
             </div>
           </div>
 
@@ -126,8 +126,8 @@ function App() {
             <Menu
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
-              mode="inline"
-              theme="dark"
+              mode="vertical"
+              theme="light"
               inlineCollapsed={toggleCollapsed}
             >
 
@@ -147,8 +147,8 @@ function App() {
                   <Link to='/myCourse'>{t('menu.myCourse')}</Link>
                 </Badge>
               </Menu.Item>
-
-
+                <Registration />
+            
               {/* <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
                   <Link to='/typing'>{t('menu.typing')}</Link>
                 </Menu.Item> */}
