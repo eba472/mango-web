@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Search from 'antd/lib/input/Search'
-import './style.css'
 
 const SearchComponent = ({
   setSearchValue,
@@ -13,7 +12,12 @@ const SearchComponent = ({
   const { t } = useTranslation('common')
   return (
     <div
-      style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', fontSize: '50px !important' }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '40px',
+        fontSize: '50px !important',
+      }}
     >
       <Search
         addonBefore={t('SearchComponent.search')}

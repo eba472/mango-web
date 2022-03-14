@@ -79,7 +79,7 @@ function App() {
                 </Link>
                 <Menu.Item key='1'>
                   {!user ? (
-                    <span onClick={signInWithGoogle}>
+                    <span style={{ color: 'black' }} onClick={signInWithGoogle}>
                       Please sign in with Google here!
                     </span>
                   ) : (
@@ -89,7 +89,7 @@ function App() {
                 <Menu.Item key='2'>
                   {user && (
                     <span
-                      style={{ color: 'blue' }}
+                      style={{ color: 'black' }}
                       onClick={() => googleSignout()}
                     >
                       Sign out
@@ -112,7 +112,7 @@ function App() {
                       i18n.changeLanguage('en')
                       setLanguage('en')
                     }}
-                    >
+                  >
                     <img
                       src='/english-dict-round-sign.png'
                       alt='imgEngFlag'
