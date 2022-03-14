@@ -1,8 +1,46 @@
-import { Form, Modal } from 'antd'
+import { Button, Form, Modal } from 'antd'
 import React, { useState } from 'react'
 import SignIn from './SignIn'
 import Signup from './Signup'
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth'; 
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+firebase.initializeApp({
+  apiKey: "AIzaSyDOpnWwgDajQaMpmncBUL0Rv5CcLMUsVkk",
+  authDomain: "aplus-4ae14.firebaseapp.com",
+  projectId: "aplus-4ae14",
+  storageBucket: "aplus-4ae14.appspot.com",
+  messagingSenderId: "1065455070773",
+  appId: "1:1065455070773:web:5f16f442e1ed6b28becb7c",
+  measurementId: "G-YZLRQ0WT1X"
+})
+
+const auth = firebase.auth()
+const firestore = firebase.firestore()
+const engWords = 'qwerty'
+const monWords = 'qwerty'
+// const messageRef = firestore.collection('Eng-Mon dictionary');
+
+// const query = messageRef.orderBy('createdAt').limit(25);
+
+  // const [messages] = useCollectionData(query, {idField: 'id'});
+  // const [formValue, setFormValue] = useState('');
+  // const sendDictData = async() => {
+  //   await messageRef.add({
+  //     text: formValue,
+  //     // createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  //   })
+  //   setFormValue('');
+  // }
+
+  const dataAdd = () => firestore.collection('engMonDict').doc(`${engWords}`).set({
+    mn: `${monWords}`
+  }).then(() => {
+    console.log("haha")
+  })
 interface Values {
   title: string
   description: string
@@ -24,6 +62,7 @@ const ModalForm: React.FC<CollectionCreateFormProps> = ({
 }) => {
   const [form] = Form.useForm()
   const [isUser, setIsUser] = useState(true)
+  // const [user] = useAuthState(auth)
 
   return (
     <Modal
@@ -48,6 +87,7 @@ const ModalForm: React.FC<CollectionCreateFormProps> = ({
           })
       }}
     >
+      <Button onClick={dataAdd}>Data add button</Button>
       {isUser ? (
         <SignIn setIsUser={setIsUser} />
       ) : (

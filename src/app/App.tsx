@@ -32,6 +32,9 @@ import {
 } from '@ant-design/icons';
 
 
+import Flashcard from './flashcard/Flashcard'
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
 const { Header, Content, Footer } = Layout
 
 function App() {
@@ -68,7 +71,12 @@ function App() {
                     <img
                       src='/Logo.png'
                       alt='imgLogo'
-                      style={{ width: '64px', height: '50px', padding: '5px', marginLeft: '10px' }}
+                      style={{
+                        width: '64px',
+                        height: '50px',
+                        padding: '5px',
+                        marginLeft: '10px',
+                      }}
                     ></img>
                   </Menu.Item>
                 </Link>
@@ -109,7 +117,7 @@ function App() {
           </div>
 
         </Header>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}>
           <div id="mainMenuOnTheSide" style={{ width: '30%' }}>
             <Button type="primary" onClick={() => setToggleCollapsed(!toggleCollapsed)} style={{ marginBottom: 16 }}>
               {React.createElement(toggleCollapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
