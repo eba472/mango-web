@@ -79,9 +79,9 @@ function MainMenu() {
             </Link>
           </Badge>
         </Menu.Item>
-        <Menu.Item key='4' style={menuItemStyle} icon={<UserAddOutlined />}>
+        {/* <Menu.Item key='4' style={menuItemStyle} icon={<UserAddOutlined />}>
           <Link to='/register'>{t('LeftDiv.signIn')}</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     </div>
   )

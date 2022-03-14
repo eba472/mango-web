@@ -22,6 +22,7 @@ import Registration from './components/header/registration/Registration'
 import './styles.css'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase/compat/app'
+import { signOut } from 'firebase/auth'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
@@ -31,6 +32,15 @@ function App() {
   const [user] = useAuthState(auth as any)
   console.log('user', user)
   console.log('user?.displayName', user?.displayName)
+
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)
+  }
+  const googleSignout = () => {
+    signOut(auth)
+    console.log('user :>> ', user)
+  }
   return (
     <Router>
       <Layout>
@@ -67,6 +77,25 @@ function App() {
                     ></img>
                   </Menu.Item>
                 </Link>
+                <Menu.Item key='1'>
+                  {!user ? (
+                    <span onClick={signInWithGoogle}>
+                      Please sign in with Google here!
+                    </span>
+                  ) : (
+                    <span>{'Welcome ' + user?.displayName + '!        '}</span>
+                  )}
+                </Menu.Item>
+                <Menu.Item key='2'>
+                  {user && (
+                    <span
+                      style={{ color: 'blue' }}
+                      onClick={() => googleSignout()}
+                    >
+                      Sign out
+                    </span>
+                  )}
+                </Menu.Item>
               </Menu>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
