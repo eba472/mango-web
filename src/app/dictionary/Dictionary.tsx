@@ -6,7 +6,7 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 const { Panel } = Collapse
 
 const Dictionary = () => {
-  const [searchValue, setSearchValue] = useState<string>('search')
+  const [searchValue, setSearchValue] = useState<string>('')
   const [errorTitle, setErrorTitle] = useState<string>('')
   const [wordInfo, setWordInfo] = useState<any>()
   useEffect(() => {

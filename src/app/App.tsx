@@ -90,8 +90,17 @@ function App() {
                       i18n.changeLanguage('en')
                       setLanguage('en')
                     }}
-                  >
-                    {t('menu.english')}
+                    >
+                    <img
+                      src='/english-dict-round-sign.png'
+                      alt='imgEngFlag'
+                      style={{
+                        width: '64px',
+                        height: '50px',
+                        padding: '5px',
+                        marginLeft: '18px',
+                      }}
+                    ></img>
                   </Menu.Item>
                 ) : (
                   <Menu.Item
@@ -101,7 +110,16 @@ function App() {
                       setLanguage('mn')
                     }}
                   >
-                    {t('menu.mongolian')}
+                    <img
+                      src='/mongolia-dict-round-sign.png'
+                      alt='imgMnFlag'
+                      style={{
+                        width: '64px',
+                        height: '50px',
+                        padding: '5px',
+                        marginLeft: '18px',
+                      }}
+                    ></img>
                   </Menu.Item>
                 )}
               </Menu>
