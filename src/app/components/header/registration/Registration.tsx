@@ -1,40 +1,44 @@
 import { UserAddOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import ModalForm from './ModalForm'
 
-
-const Registration = () => {
+const Registration = ({
+  sideMenuVisible,
+  setSideMenuVisible,
+}: {
+  sideMenuVisible: boolean
+  setSideMenuVisible: (sideMenuVisible: boolean) => void
+}) => {
   const { t } = useTranslation('common')
-
-  const [visible, setVisible] = useState(true)
 
   const onSignIn = (values: any) => {
     console.log('onSignIn: ', values)
-    setVisible(false)
+    setSideMenuVisible(false)
   }
   const onSignUp = (values: any) => {
     console.log('onSignUp: ', values)
-    setVisible(false)
+    setSideMenuVisible(false)
   }
-
+  console.log('sideMenuVisible :>> ', sideMenuVisible)
   return (
-    <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }} icon={<UserAddOutlined />} onClick={() => {
-      setVisible(true)
-    }}>
+    <Menu.Item
+      key='4'
+      style={{ color: 'white', fontSize: '20px' }}
+      icon={<UserAddOutlined />}
+      onClick={() => setSideMenuVisible(true)}
+    >
       {t('LeftDiv.logIn')}
       <ModalForm
-        visible={visible}
+        visible={sideMenuVisible}
         onSignIn={onSignIn}
         onSignUp={onSignUp}
         onCancel={() => {
-          setVisible(false)
+          setSideMenuVisible(false)
         }}
       />
-
     </Menu.Item>
-
   )
 }
 export default Registration

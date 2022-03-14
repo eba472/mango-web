@@ -10,7 +10,7 @@
         "mongolian": "Монгол хэл",
         "english": "Англи хэл",
         "myCourse": "Хичээл",
-        "coming soon": "Тун удахгүй"
+        "comingSoon": "Тун удахгүй"
     },
     "SearchComponent": {
         "dictionary": "Толь бичиг",

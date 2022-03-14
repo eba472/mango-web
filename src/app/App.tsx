@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { CSSProperties, useState } from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 import { Badge, Layout, Menu } from 'antd'
-import { ContainerOutlined, DesktopOutlined, GlobalOutlined, PieChartOutlined } from '@ant-design/icons'
+import {
+  ContainerOutlined,
+  DesktopOutlined,
+  PieChartOutlined,
+} from '@ant-design/icons'
 import Typing from './typing/pages/typing/Typing'
 import Profile from './typing/pages/profiles/Profile'
 import Signup from './typing/pages/signup/Signup'
@@ -10,7 +14,6 @@ import Experiment from './typing/pages/experiment/Experiment'
 import Dictionary from './dictionary/Dictionary'
 import './styles.css'
 import { useTranslation } from 'react-i18next'
-import SubMenu from 'antd/lib/menu/SubMenu'
 import Games from './games/Games'
 import Registration from './components/header/registration/Registration'
 import ChooseLevel from './games/games/snake/ChooseLevel'
@@ -22,29 +25,19 @@ import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
 import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
-
-
-import { UserAddOutlined } from '@ant-design/icons'
-
-import { Button } from 'antd';
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons';
-
-
 import Flashcard from './flashcard/Flashcard'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
-import { enableNetwork } from 'firebase/firestore'
 const { Header, Content, Footer } = Layout
 
 function App() {
   const { t, i18n } = useTranslation('common')
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState('mn')
   const [toggleCollapsed, setToggleCollapsed] = useState(false)
 
+  const [sideMenuVisible, setSideMenuVisible] = useState(false)
 
+  const menuItemStyle: CSSProperties = { color: 'white', fontSize: '20px' }
   return (
     <Router>
       <Layout>
@@ -56,14 +49,14 @@ function App() {
             padding: '0px',
           }}
         >
-
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div style={{ width: '100%' }} >
+            <div style={{ width: '100%' }}>
               <Menu
                 mode='horizontal'
                 style={{
                   backgroundColor: '#fff',
-                }}>
+                }}
+              >
                 <Link to='/'>
                   <Menu.Item
                     key='0'
@@ -81,9 +74,7 @@ function App() {
                     ></img>
                   </Menu.Item>
                 </Link>
-
               </Menu>
-
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <Menu
@@ -92,66 +83,102 @@ function App() {
                   width: '150px',
                 }}
               >
-                {language === 'mn' ? <Menu.Item
-                  key='setting:1'
-                  onClick={() => {
-                    i18n.changeLanguage('en')
-                    setLanguage('en')
-                  }}
-                >
-                  {t('menu.english')}
-                </Menu.Item> : <Menu.Item
-                  key='setting:2'
-                  onClick={() => {
-                    i18n.changeLanguage('mn')
-                    setLanguage('mn')
-                  }}
-                >
-                  {t('menu.mongolian')}
-                </Menu.Item>}
-
-
+                {language === 'mn' ? (
+                  <Menu.Item
+                    key='setting:1'
+                    onClick={() => {
+                      i18n.changeLanguage('en')
+                      setLanguage('en')
+                    }}
+                  >
+                    {t('menu.english')}
+                  </Menu.Item>
+                ) : (
+                  <Menu.Item
+                    key='setting:2'
+                    onClick={() => {
+                      i18n.changeLanguage('mn')
+                      setLanguage('mn')
+                    }}
+                  >
+                    {t('menu.mongolian')}
+                  </Menu.Item>
+                )}
               </Menu>
-
             </div>
           </div>
-
         </Header>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}>
-          <div id="mainMenuOnTheSide" style={{ width: '30%' }}>
-            <Button type="primary" onClick={() => setToggleCollapsed(!toggleCollapsed)} style={{ marginBottom: 16 }}>
-              {React.createElement(toggleCollapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-            </Button>
-
+        <div
+          style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}
+        >
+          <div
+            id='mainMenuOnTheSide'
+            style={{ width: '20%', minWidth: 200 }}
+            onMouseEnter={() => setToggleCollapsed(false)}
+            onMouseLeave={() => setToggleCollapsed(true)}
+          >
             <Menu
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
-              mode="vertical"
-              theme="light"
+              mode='vertical'
+              theme='light'
               inlineCollapsed={toggleCollapsed}
             >
-
-
-              <Menu.Item key='1' style={{ color: 'white', fontSize: '20px' }} icon={<PieChartOutlined />}>
+              <Menu.Item
+                key='1'
+                style={menuItemStyle}
+                icon={<PieChartOutlined />}
+              >
                 <Link to='/dictionary'>{t('menu.dictionary')}</Link>
               </Menu.Item>
 
-              <Menu.Item key='2' style={{ color: 'white', fontSize: '20px' }} disabled={true} icon={<DesktopOutlined />}>
-                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding: '0px 5px ', color: '#000', fontSize: '8px', fontWeight: 'bold' }} >
-                  <Link to='/games' >{t('menu.games')}</Link>
+              <Menu.Item
+                key='2'
+                style={menuItemStyle}
+                disabled={true}
+                icon={<DesktopOutlined />}
+              >
+                <Badge
+                  count={t('menu.comingSoon')}
+                  size='small'
+                  offset={[12, -9]}
+                  style={{
+                    backgroundColor: 'white',
+                    padding: '0px 5px ',
+                    color: '#000',
+                    fontSize: '8px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  <Link to='/games'>{t('menu.games')}</Link>
                 </Badge>
               </Menu.Item>
 
-              <Menu.Item key='3' style={{ color: 'white', fontSize: '20px' }} disabled={true} icon={<ContainerOutlined />}>
-                <Badge count={t('menu.coming soon')} size="small" offset={[12, -9]} style={{ backgroundColor: "white", padding: '0px 5px ', color: '#000', fontSize: '8px', fontWeight: 'bold' }} >
+              <Menu.Item
+                key='3'
+                style={menuItemStyle}
+                disabled={true}
+                icon={<ContainerOutlined />}
+              >
+                <Badge
+                  count={t('menu.comingSoon')}
+                  size='small'
+                  offset={[12, -9]}
+                  style={{
+                    backgroundColor: 'white',
+                    padding: '0px 5px ',
+                    color: '#000',
+                    fontSize: '8px',
+                    fontWeight: 'bold',
+                  }}
+                >
                   <Link to='/myCourse'>{t('menu.myCourse')}</Link>
                 </Badge>
               </Menu.Item>
-                <Registration />
-            
-              {/* <Menu.Item key='4' style={{ color: 'white', fontSize: '20px' }}>
-                  <Link to='/typing'>{t('menu.typing')}</Link>
-                </Menu.Item> */}
+              <Registration
+                sideMenuVisible={sideMenuVisible}
+                setSideMenuVisible={setSideMenuVisible}
+              />
             </Menu>
           </div>
           <Content
@@ -172,23 +199,12 @@ function App() {
                 <Route path='grades' element={<Grades />} />
                 <Route path='MyFiles' element={<MyFiles />} />
                 <Route path='homework' element={<Homework />} />
-
-
-
-              </Route>
-
-              <Route path='typing' element={<Typing />}>
-                <Route path='profile' element={<Profile />} />
-                <Route path='logIn' element={<Signup />} />
-                {/* <Route path='signup' element={<Signup />} /> */}
-                <Route path='TypingTest' element={<TypingTest />} />
-                <Route path='experiment' element={<Experiment />} />
               </Route>
             </Routes>
           </Content>
         </div>
         <Footer style={{ textAlign: 'center' }}>
-          Mango inc created by us!
+          This dictionary is created by A+
         </Footer>
       </Layout>
     </Router>
