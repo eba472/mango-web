@@ -6,6 +6,7 @@ import {
   DesktopOutlined,
   PieChartOutlined,
   UserAddOutlined,
+  BorderOutlined
 } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import 'firebase/compat/firestore'
@@ -78,6 +79,10 @@ function MainMenu() {
               {t('menu.myCourse')}
             </Link>
           </Badge>
+        </Menu.Item>
+
+        <Menu.Item key='4' style={menuItemStyle} icon={<BorderOutlined />}>
+          <Link to='/flashcard'>{t('menu.flashcard')}</Link>
         </Menu.Item>
         {/* <Menu.Item key='4' style={menuItemStyle} icon={<UserAddOutlined />}>
           <Link to='/register'>{t('LeftDiv.signIn')}</Link>
