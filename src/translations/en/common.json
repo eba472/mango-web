@@ -2,6 +2,7 @@
     "menu": {
         "dictionary": "Dictionary",
         "flashcard": "Flashcard",
+        "contact-us": "Contact us",
         "typing": "Typing",
         "games": "Games",
         "pronunciation": "Pronunciation",
@@ -30,6 +31,13 @@
         "signUp": "Sign up",
         "Practice": "Practice",
         "Profile": "Profile"
+    },
+    "ContactUsComponent": {
+        "title": "Contact Us",
+        "yourName": "Your name",
+        "email": "Your email",
+        "textField": "Write us about any project. We'd love to work with you",
+        "button": "Send to us"
     }
 
 }
