@@ -34,10 +34,11 @@
     },
     "ContactUsComponent": {
         "title": "Contact Us",
-        "yourName": "Your name",
-        "email": "Your email",
+        "yourName": "Name",
+        "email": "Email",
         "textField": "Write us about any project. We'd love to work with you",
-        "button": "Send to us"
+        "button": "Send to us",
+        "subject": "Subject"
     }
 
 }
