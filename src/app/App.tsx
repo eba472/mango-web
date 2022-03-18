@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 import { Button, Layout, Menu } from 'antd'
-
 import { useTranslation } from 'react-i18next'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
@@ -28,9 +27,43 @@ import { signOut } from 'firebase/auth'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
+const usePersistedState = (name: string, defaultValue: any) => {
+  const [value, setValue] = React.useState(defaultValue);
+  const nameRef = React.useRef(name);
+
+  React.useEffect(() => {
+    try {
+      const storedValue = localStorage.getItem(name);
+      if (storedValue !== null) setValue(storedValue);
+      else localStorage.setItem(name, defaultValue);
+    } catch {
+      setValue(defaultValue);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(nameRef.current, value);
+    } catch {}
+  }, [value]);
+
+  React.useEffect(() => {
+    const lastName = nameRef.current;
+    if (name !== lastName) {
+      try {
+        localStorage.setItem(name, value);
+        nameRef.current = name;
+        localStorage.removeItem(lastName);
+      } catch {}
+    }
+  }, [name]);
+
+  return [value, setValue];
+};
+
 function App() {
   const { t, i18n } = useTranslation('common')
-  const [language, setLanguage] = useState('mn')
+  const [language, setLanguage] = usePersistedState('language', [{name: 'mn'}])
   const [user] = useAuthState(auth as any)
   console.log('user', user)
   console.log('user?.displayName', user?.displayName)
@@ -82,11 +115,11 @@ function App() {
                 <Menu.Item key='1'>
                   {!user ? (
                     <span style={{ color: 'black' }} onClick={signInWithGoogle}>
-                      Please sign in with Google here!
+                      {t('TopBar.signInMessage')}
                     </span>
                   ) : (
                     <span style={{ color: 'black' }}>
-                      {'Welcome ' + user?.displayName + '!        '}
+                      {t('TopBar.welcome') + ' '  + user?.displayName + '!        '}
                     </span>
                   )}
                 </Menu.Item>
@@ -96,7 +129,7 @@ function App() {
                       style={{ color: 'black' }}
                       onClick={() => googleSignout()}
                     >
-                      Sign out
+                      {t('TopBar.signOut')}
                     </span>
                   )}
                 </Menu.Item>

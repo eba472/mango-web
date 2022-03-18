@@ -1,44 +1,56 @@
 {
-    "menu": {
-        "dictionary": "Dictionary",
-        "flashcard": "Flashcard",
-        "contact-us": "Contact us",
-        "typing": "Typing",
-        "games": "Games",
-        "pronunciation": "Pronunciation",
-        "grammer": "Grammer",
-        "idioms": "Idioms",
-        "changeLanguage": "Languages",
-        "english": "English",
-        "mongolian": "Mongolian",
-        "myCourse": "My course",
-        "comingSoon": "Coming soon"
-    },
-    "SearchComponent": {
-        "dictionary": "Dictionary",
-        "search": "Search",
-        "inputSearchWord": "Input a search word"
-    },
-    "SideBar": {
-        "definition": "Definition",
-        "picture": "Pictures",
-        "synonym": "Synonyms",
-        "example": "Examples"
-    },
-    "LeftDiv": {
-        "signIn": "Sign in",
-        "signInLong": "Click here to sign in!",
-        "signUp": "Sign up",
-        "Practice": "Practice",
-        "Profile": "Profile"
-    },
-    "ContactUsComponent": {
-        "title": "Contact Us",
-        "yourName": "Name",
-        "email": "Email",
-        "textField": "Write us about any project. We'd love to work with you",
-        "button": "Send to us",
-        "subject": "Subject"
-    }
-
+  "menu": {
+    "dictionary": "Dictionary",
+    "flashcard": "Flashcard",
+    "contact-us": "Contact us",
+    "typing": "Typing",
+    "games": "Games",
+    "pronunciation": "Pronunciation",
+    "grammer": "Grammer",
+    "idioms": "Idioms",
+    "changeLanguage": "Languages",
+    "english": "English",
+    "mongolian": "Mongolian",
+    "myCourse": "My course",
+    "comingSoon": "Coming soon"
+  },
+  "SearchComponent": {
+    "dictionary": "Dictionary",
+    "search": "Search",
+    "inputSearchWord": "Input a search word"
+  },
+  "SideBar": {
+    "definition": "Definition",
+    "picture": "Pictures",
+    "synonym": "Synonyms",
+    "example": "Examples"
+  },
+  "LeftDiv": {
+    "signIn": "Sign in",
+    "signInLong": "Click here to sign in!",
+    "signUp": "Sign up",
+    "Practice": "Practice",
+    "Profile": "Profile"
+  },
+  "TopBar": {
+    "signInMessage": "Please sign in with Google here!",
+    "welcome": "Welcome",
+    "signOut": "Sign out"
+  },
+  "ContactUsComponent": {
+    "title": "Contact Us",
+    "yourName": "Name",
+    "email": "Email",
+    "textField": "Write us about any project. We'd love to work with you",
+    "button": "Send to us",
+    "subject": "Subject"
+  },
+  "Dictionary": {
+    "definition": "Definition",
+    "exampleSentence": "Example sentence",
+    "word": "Word",
+    "pronunciation": "Pronunciation",
+    "synonyms": "Synonyms",
+    "antonyms": "Antonyms"
+  }
 }

@@ -27,11 +27,16 @@
   },
   "LeftDiv": {
     "signIn": "Нэвтрэх",
-    "signInLong": "Та энд дарж Нэвтэрнэ үү",
+    "signInLong": "Та энд дарж нэвтэрнэ үү",
     "signUp": "Бүртгүүлэх",
     "Practice": "Дасгал",
     "Profile": "Profile"
   },
+  "TopBar":{
+    "signInMessage": "Та энд дарж Google-ээр нэвтэрнэ үү",
+    "welcome": "Тавтай морил",
+    "signOut": "Гараx"
+},
   "ContactUsComponent": {
     "title": "Бидэнтэй холбогдох",
     "yourName": "Таны нэр",
@@ -39,5 +44,13 @@
     "textField": "Санал хүсэлтээ бичнэ үү. Бид таньтай хамтран ажиллахдаа таатай байна :)",
     "button": "Бидэнрүү илгээх",
     "subject": "Агуулга"
-  }
+  },
+  "Dictionary":{
+    "definition": "Тайлбар",
+    "word": "Үг",
+    "pronunciation": "Дуудлага",
+    "exampleSentence": "Жишээ өгүүлбэр",
+    "synonyms": "Ойролцоо утгатай үг",
+    "antonyms": "Эсрэг утгатай үг"
+}
 }
