@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import SearchComponent from './components/SearchComponent'
 import axios from 'axios'
 import { Button, Collapse } from 'antd'
+import PlayAudio from './components/PlayAudio'
 const { Panel } = Collapse
 
+interface Phonetictype {
+  text: string
+  audio?: string
+}
 const Dictionary = () => {
   const [searchValue, setSearchValue] = useState<string>('')
   const [errorTitle, setErrorTitle] = useState<string>('')
@@ -33,11 +38,6 @@ const Dictionary = () => {
     return ans
   }
 
-  // var x = document.getElementById("myAudio");
-
-  // function playAudio() {
-  //   x.play();
-  // }
 
   return (
     <div>
@@ -51,59 +51,57 @@ const Dictionary = () => {
         <Collapse
           defaultActiveKey={['1']}
           onChange={callback}
-          style={{ padding: '20px' }}
+          style={{ padding: '20px ' }}
         >
           <Panel header='Definition' key='1'>
-            <p>Word: {wordInfo?.word}</p>
-            Pronunciations:{' '}
-            {wordInfo?.phonetics.map((phonetic: any) => {
+            <p style={{ fontWeight: 'bold', fontSize: '36px', color: '#1d2a57', marginBottom: '20px' }}> {wordInfo?.word}</p>
+            {/* Pronunciations:{' '} */}
+            {wordInfo?.phonetics.map((phonetic: Phonetictype) => {
+              console.log('phonetic?.url', phonetic?.audio)
               return <>
                 <Button>{phonetic.text}</Button>
-                {/* <Audio >
-                  <source src="horse.ogg" type="audio/ogg"></source>
-                    </Audio>
-                    <Button onclick={playAudio()} type="button" >Play Audio</Button> */}
-
-                  </>
+                {phonetic?.audio && <PlayAudio url={phonetic.audio} />}
+              </>
             })}
-                  <p>{wordInfo?.origin}</p>
-                  <div>
-                    {wordInfo?.meanings.map((meaning: any) => {
-                      return (
-                        <Collapse
-                          defaultActiveKey={['1']}
-                          onChange={callback}
-                          style={{ padding: '20px' }}
-                        >
-                          <Panel header={meaning.partOfSpeech} key='1'>
+            <p>{wordInfo?.origin}</p>
+            <div>
+              {wordInfo?.meanings.map((meaning: any) => {
+                return (
+                  <Collapse
+                    defaultActiveKey={['1']}
+                    onChange={callback}
+                    style={{ padding: '20px' }}
+                  >
+                    <Panel header={meaning.partOfSpeech} key='1'>
+                      <div>
+                        {meaning.definitions.map((def: any) => {
+                          return (
                             <div>
-                              {meaning.definitions.map((def: any) => {
-                                return (
-                                  <div>
-                                    <h3>Definition: {def.definition}</h3>
-                                    <p>Example sentence: {def.example}</p>
-                                    <p>
-                                      {def.synonyms &&
-                                        'Synonyms: ' + arrToString(def.antonyms)}
-                                    </p>
-                                    <p>
-                                      {def.antonyms &&
-                                        'Antonyms: ' + arrToString(def.antonyms)}
-                                    </p>
-                                  </div>
-                                )
-                              })}
+                              <h3>Definition: {def.definition}</h3>
+                              <p>Example sentence: {def.example}</p>
+                              <p>
+                                {def.synonyms &&
+                                  'Synonyms: ' + arrToString(def.antonyms)}
+                              </p>
+                              <p>
+                                {def.antonyms &&
+                                  'Antonyms: ' + arrToString(def.antonyms)}
+                              </p>
                             </div>
-                          </Panel>
-                        </Collapse>
-                      )
-                    })}
-                  </div>
-                </Panel>
-              </Collapse>
-      )}
-          </div>
-          )
+                          )
+                        })}
+                      </div>
+                    </Panel>
+                  </Collapse>
+                )
+              })}
+            </div>
+          </Panel>
+        </Collapse>
+      )
+      }
+    </div >
+  )
 }
 
-          export default Dictionary
+export default Dictionary
