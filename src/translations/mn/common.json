@@ -1,6 +1,8 @@
 {
   "menu": {
     "dictionary": "Толь бичиг",
+    "flashcard": "Флаш карт",
+    "contact-us": "Бидэнтэй холбогдох",
     "typing": "Шивих дасгал",
     "games": "Тоглоом",
     "pronunciation": "Дуудлага",
@@ -29,5 +31,13 @@
     "signUp": "Бүртгүүлэх",
     "Practice": "Дасгал",
     "Profile": "Profile"
+  },
+  "ContactUsComponent": {
+    "title": "Бидэнтэй холбогдох",
+    "yourName": "Таны нэр",
+    "email": "Таны имэйл",
+    "textField": "Санал хүсэлтээ бичнэ үү. Бид таньтай хамтран ажиллахдаа таатай байна :)",
+    "button": "Бидэнрүү илгээх",
+    "subject": "Агуулга"
   }
 }

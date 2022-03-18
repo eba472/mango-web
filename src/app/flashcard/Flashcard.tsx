@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FlashcardComponent from './components/FlashcardComponent'
 const savedWordsByUser = [
   {
     word: 'apple',
@@ -18,7 +18,18 @@ const savedWordsByUser = [
   },
 ]
 const Flashcard = () => {
-  return <div>This is a flashcard app.</div>
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '40px',
+        fontSize: '50px !important',
+      }}>
+      This is a flashcard app.
+      <FlashcardComponent />
+    </div>
+  )
 }
 
 export default Flashcard

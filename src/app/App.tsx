@@ -17,6 +17,8 @@ import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
 import Dictionary from './dictionary/Dictionary'
+import Flashcard from './flashcard/Flashcard'
+import Contact_us from './contact_us/Contact_us'
 import { Content } from 'antd/lib/layout/layout'
 import Registration from './components/header/registration/Registration'
 import './styles.css'
@@ -158,6 +160,8 @@ function App() {
           >
             <Routes>
               <Route path='dictionary' element={<Dictionary />} />
+              <Route path='flashcard' element={<Flashcard />} />
+              <Route path='contact-us' element={<Contact_us />} />
               <Route path='register' element={<Registration />} />
               <Route path='games' element={<Games />} />
               <Route path='games/snake' element={<ChooseLevel />} />
