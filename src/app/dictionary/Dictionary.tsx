@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import SearchComponent from './components/SearchComponent'
 import axios from 'axios'
 import { Button, Collapse } from 'antd'
+import { useTranslation } from 'react-i18next'
+
 const { Panel } = Collapse
 
 const Dictionary = () => {
   const [searchValue, setSearchValue] = useState<string>('')
   const [errorTitle, setErrorTitle] = useState<string>('')
   const [wordInfo, setWordInfo] = useState<any>()
+  const { t } = useTranslation('common')
   useEffect(() => {
     axios
       .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchValue}`)
@@ -53,9 +56,9 @@ const Dictionary = () => {
           onChange={callback}
           style={{ padding: '20px' }}
         >
-          <Panel header='Definition' key='1'>
-            <p>Word: {wordInfo?.word}</p>
-            Pronunciations:{' '}
+          <Panel header={t('Dictionary.definition')} key='1'>
+            <p>{t('Dictionary.word')}: {wordInfo?.word}</p>
+            {t('Dictionary.pronunciation')}:{' '}
             {wordInfo?.phonetics.map((phonetic: any) => {
               return <>
                 <Button>{phonetic.text}</Button>
@@ -80,15 +83,15 @@ const Dictionary = () => {
                               {meaning.definitions.map((def: any) => {
                                 return (
                                   <div>
-                                    <h3>Definition: {def.definition}</h3>
-                                    <p>Example sentence: {def.example}</p>
+                                    <h3>{t('Dictionary.definition')} {def.definition}</h3>
+                                    <p>{t('Dictionary.exampleSentence')}: {def.example}</p>
                                     <p>
                                       {def.synonyms &&
-                                        'Synonyms: ' + arrToString(def.antonyms)}
+                                        t('Dictionary.synonyms') + arrToString(def.antonyms)}
                                     </p>
                                     <p>
                                       {def.antonyms &&
-                                        'Antonyms: ' + arrToString(def.antonyms)}
+                                        t('Dictionary.antonyms') + arrToString(def.antonyms)}
                                     </p>
                                   </div>
                                 )
