@@ -6,7 +6,7 @@
         "typing": "Typing",
         "games": "Games",
         "pronunciation": "Pronunciation",
-        "grammar": "Grammar",
+        "grammar": "Grammer",
         "idioms": "Idioms",
         "changeLanguage": "Languages",
         "english": "English",
@@ -14,6 +14,7 @@
         "myCourse": "My course",
         "comingSoon": "Coming soon",
         "translation": "Translation"
+
     },
     "SearchComponent": {
         "dictionary": "Dictionary",
@@ -33,6 +34,11 @@
         "Practice": "Practice",
         "Profile": "Profile"
     },
+    "TopBar": {
+        "signInMessage": "Please sign in with Google here!",
+        "welcome": "Welcome",
+        "signOut": "Sign out"
+    },
     "ContactUsComponent": {
         "title": "Contact Us",
         "yourName": "Name",
@@ -40,6 +46,13 @@
         "textField": "Write us about any project. We'd love to work with you",
         "button": "Send to us",
         "subject": "Subject"
+    },
+    "Dictionary": {
+        "definition": "Definition",
+        "exampleSentence": "Example sentence",
+        "word": "Word",
+        "pronunciation": "Pronunciation",
+        "synonyms": "Synonyms",
+        "antonyms": "Antonyms"
     }
-
 }
