@@ -16,7 +16,6 @@ import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
 import Grades from './myCourse/gradesAndQuizzes/Grades'
 import MyFiles from './myCourse/myFiles/MyFiles'
 import Homework from './myCourse/homework/Homework'
-import Dictionary from './dictionary/Dictionary'
 import Flashcard from './flashcard/Flashcard'
 import Contact_us from './contact_us/Contact_us'
 import { Content } from 'antd/lib/layout/layout'
@@ -25,6 +24,7 @@ import './styles.css'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase/compat/app'
 import { signOut } from 'firebase/auth'
+import DictionaryNav from './dictionary/DictionaryNav'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
@@ -156,10 +156,10 @@ function App() {
           <MainMenu />
           <Content
             className='site-layout'
-            style={{ padding: '0px', marginTop: 64, width: '80%' }}
+            style={{ padding: '0px', marginTop: 64, width: '80%', margin:'80px 40px' }}
           >
             <Routes>
-              <Route path='dictionary' element={<Dictionary />} />
+              <Route path='dictionaryNav/*' element={<DictionaryNav />} />
               <Route path='flashcard' element={<Flashcard />} />
               <Route path='contact-us' element={<Contact_us />} />
               <Route path='register' element={<Registration />} />

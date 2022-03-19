@@ -42,7 +42,7 @@ function MainMenu() {
         inlineCollapsed={toggleCollapsed}
       >
         <Menu.Item key='1' style={menuItemStyle} icon={<PieChartOutlined />}>
-          <Link to='/dictionary'>{t('menu.dictionary')}</Link>
+          <Link to='/dictionaryNav'>{t('menu.dictionary')}</Link>
         </Menu.Item>
 
         <Menu.Item

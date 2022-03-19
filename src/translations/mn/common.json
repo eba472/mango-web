@@ -1,43 +1,45 @@
 {
-  "menu": {
-    "dictionary": "Толь бичиг",
-    "flashcard": "Флаш карт",
-    "contact-us": "Бидэнтэй холбогдох",
-    "typing": "Шивих дасгал",
-    "games": "Тоглоом",
-    "pronunciation": "Дуудлага",
-    "grammer": "Дүрэм",
-    "idioms": "Хэлц үг",
-    "changeLanguage": "Хэл солих",
-    "mongolian": "Монгол хэл",
-    "english": "Англи хэл",
-    "myCourse": "Хичээл",
-    "comingSoon": "Тун удахгүй"
-  },
-  "SearchComponent": {
-    "dictionary": "Толь бичиг",
-    "search": "Хайх",
-    "inputSearchWord": "үг хайх"
-  },
-  "SideBar": {
-    "definition": "Үгийн утга",
-    "picture": "Зурагнууд",
-    "synonym": "Төсөөтэй үгc",
-    "example": "Жишээ өгүүлбэрүүд"
-  },
-  "LeftDiv": {
-    "signIn": "Нэвтрэх",
-    "signInLong": "Та энд дарж Нэвтэрнэ үү",
-    "signUp": "Бүртгүүлэх",
-    "Practice": "Дасгал",
-    "Profile": "Profile"
-  },
-  "ContactUsComponent": {
-    "title": "Бидэнтэй холбогдох",
-    "yourName": "Таны нэр",
-    "email": "Таны имэйл",
-    "textField": "Санал хүсэлтээ бичнэ үү. Бид таньтай хамтран ажиллахдаа таатай байна :)",
-    "button": "Бидэнрүү илгээх",
-    "subject": "Агуулга"
-  }
+    "menu": {
+        "dictionary": "Толь бичиг",
+        "flashcard": "Үг цээжлэх",
+        "contact-us": "Бидэнтэй холбогдох",
+        "typing": "Шивих дасгал",
+        "games": "Тоглоом",
+        "pronunciation": "Дуудлага",
+        "grammar": "Дүрэм",
+        "idioms": "Хэлц үг",
+        "changeLanguage": "Хэл солих",
+        "mongolian": "Монгол хэл",
+        "english": "Англи хэл",
+        "myCourse": "Хичээл",
+        "comingSoon": "Тун удахгүй",
+        "translation": "Орчуулга"
+
+    },
+    "SearchComponent": {
+        "dictionary": "Толь бичиг",
+        "search": "Хайх",
+        "inputSearchWord": "үг хайх"
+    },
+    "SideBar": {
+        "definition": "Үгийн утга",
+        "picture": "Зурагнууд",
+        "synonym": "Төсөөтэй үгc",
+        "example": "Жишээ өгүүлбэрүүд"
+    },
+    "LeftDiv": {
+        "signIn": "Нэвтрэх",
+        "signInLong": "Та энд дарж Нэвтэрнэ үү",
+        "signUp": "Бүртгүүлэх",
+        "Practice": "Дасгал",
+        "Profile": "Profile"
+    },
+    "ContactUsComponent": {
+        "title": "Бидэнтэй холбогдох",
+        "yourName": "Таны нэр",
+        "email": "Таны имэйл",
+        "textField": "Санал хүсэлтээ бичнэ үү. Бид таньтай хамтран ажиллахдаа таатай байна :)",
+        "button": "Бидэнрүү илгээх",
+        "subject": "Агуулга"
+    }
 }

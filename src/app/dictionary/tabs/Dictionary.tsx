@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import SearchComponent from './components/SearchComponent'
+import SearchComponent from '../components/SearchComponent'
 import axios from 'axios'
 import { Button, Collapse } from 'antd'
-import PlayAudio from './components/PlayAudio'
+import PlayAudio from '../components/PlayAudio'
 const { Panel } = Collapse
 
 interface Phonetictype {

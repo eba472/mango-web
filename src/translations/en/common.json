@@ -6,13 +6,14 @@
         "typing": "Typing",
         "games": "Games",
         "pronunciation": "Pronunciation",
-        "grammer": "Grammer",
+        "grammar": "Grammar",
         "idioms": "Idioms",
         "changeLanguage": "Languages",
         "english": "English",
         "mongolian": "Mongolian",
         "myCourse": "My course",
-        "comingSoon": "Coming soon"
+        "comingSoon": "Coming soon",
+        "translation": "Translation"
     },
     "SearchComponent": {
         "dictionary": "Dictionary",
