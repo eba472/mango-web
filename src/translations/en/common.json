@@ -54,5 +54,10 @@
         "pronunciation": "Pronunciation",
         "synonyms": "Synonyms",
         "antonyms": "Antonyms"
+    },
+    "Flashcard": {
+        "nextButton": "Next",
+        "prevButton": "Previous",
+        "noMoreFlashcards": "There is no more flashcards"
     }
 }

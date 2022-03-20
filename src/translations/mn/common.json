@@ -53,5 +53,10 @@
         "exampleSentence": "Жишээ өгүүлбэр",
         "synonyms": "Ойролцоо утгатай үг",
         "antonyms": "Эсрэг утгатай үг"
+    },
+    "Flashcard": {
+        "nextButton": "Дараагийх",
+        "prevButton": "Өмнөх",
+        "noMoreFlashcards": "Өөр флашкарт байхгүй байна"
     }
 }
