@@ -29,7 +29,7 @@ return (
 			fontSize: '50px !important',
 		}}
 		>
-			<div>
+			<div className="contact-area" >
 				<div className="contact-box">
     			<div className="contact-links">
 						<h2>{t('ContactUsComponent.title')}</h2>
