@@ -1,7 +1,5 @@
 import { HeartFilled, HeartOutlined } from '@ant-design/icons'
 import { Button, Tooltip } from 'antd'
-import 'firebase/compat/firestore'
-import 'firebase/compat/auth'
 import firebase from 'firebase/compat/app'
 import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -9,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
-const MainExp = ({ word, def }: { word: any; def: any }) => {
+const DictionaryMain = ({ word, def }: { word: any; def: any }) => {
   const [user] = useAuthState(auth as any)
   const [savedWords, setSavedWords] = useState<any>()
 
@@ -30,7 +28,6 @@ const MainExp = ({ word, def }: { word: any; def: any }) => {
         return true
       }
     }).length > 0
-  console.log('isWordAlreadySaved :>> ', isWordAlreadySaved)
   useEffect(() => {
     const saveToDB = async () => {
       await firestore.collection('flashcard').doc(user?.uid).set({
@@ -73,4 +70,4 @@ const MainExp = ({ word, def }: { word: any; def: any }) => {
   )
 }
 
-export default MainExp
+export default DictionaryMain

@@ -5,7 +5,7 @@ import { Collapse } from 'antd'
 import { useTranslation } from 'react-i18next'
 import Phonetics from './component/Phonetics'
 import Meanings from './component/Meanings'
-import MainExp from './component/MainExp'
+import DictionaryMain from './component/DictionaryMain'
 
 const { Panel } = Collapse
 
@@ -46,7 +46,7 @@ const Dictionary = () => {
           style={{ padding: '20px ' }}
         >
           <Panel header={t('Dictionary.definition')} key='1'>
-            <MainExp word={wordInfo?.word} def={wordInfo?.meanings[0].definitions[0].definition} />
+            <DictionaryMain word={wordInfo?.word} def={wordInfo?.meanings[0].definitions[0].definition} />
             <Phonetics phonetics={wordInfo?.phonetics} />
             <p>{wordInfo?.origin}</p>
             <Meanings meanings={wordInfo?.meanings} callback={callback} />

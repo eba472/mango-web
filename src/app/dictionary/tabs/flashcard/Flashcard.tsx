@@ -1,40 +1,45 @@
-import React, { useState }from 'react'
+import React, { useEffect, useState } from 'react'
 import './static/css/style.css'
 import FlashcardComponent from './components/FlashcardComponent'
 import Button from './components/Button'
 import { useTranslation } from 'react-i18next'
+import firebase from 'firebase/compat/app'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
-const savedWordsByUser = [
-  {
-    word: 'apple',
-    englishMeaning: 'One type of fruit, that we know',
-    mongolianMeaning: 'Алим',
-  },
-  {
-    word: 'Father',
-    englishMeaning: 'Your father',
-    mongolianMeaning: 'аав',
-  },
-  {
-    word: 'Father',
-    englishMeaning: 'Your father',
-    mongolianMeaning: 'аав',
-  },
-]
+const auth = firebase.auth()
+const firestore = firebase.firestore()
+
 const Flashcard = () => {
   const { t } = useTranslation('common')
-  const flashcardsData = savedWordsByUser
+  const [user] = useAuthState(auth as any)
+  const [flashcardsData, setFlashcardsData] = useState<any>()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const flashcardData = await (
+        await firestore.collection('flashcard').doc(user?.uid).get()
+      ).data()
+      setFlashcardsData(flashcardData?.words)
+    }
+    fetchData().catch(console.error)
+  }, [user])
+
   const [showFront, setShowFront] = useState(true)
-  var dataLength = flashcardsData.length
+  const dataLength = flashcardsData?.length
   let component
-  var [ index, setIndex ] = useState(0)
-  if ( index < flashcardsData.length ) {
+  var [index, setIndex] = useState(0)
+  if (index < dataLength) {
     component = (
       <div>
-        <FlashcardComponent flashcards={flashcardsData} showFront={showFront} setShowFront={setShowFront} index={index} />
+        <FlashcardComponent
+          flashcards={flashcardsData}
+          showFront={showFront}
+          setShowFront={setShowFront}
+          index={index}
+        />
         <Button index={index} setIndex={setIndex} dataLength={dataLength} />
       </div>
-      )
+    )
   } else {
     component = (
       <div>
@@ -51,8 +56,8 @@ const Flashcard = () => {
         marginTop: '40px',
         fontSize: '50px !important',
       }}
-      >
-      { component }
+    >
+      {component}
     </div>
   )
 }
