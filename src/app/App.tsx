@@ -9,12 +9,6 @@ import Games from './games/Games'
 import ChooseLevel from './games/games/snake/ChooseLevel'
 import Rule from './games/games/snake/gameRule/Rule'
 import SnakePlay from './games/games/snake/playground/level1'
-import MyCourse from './myCourse/MyCourse'
-import Dashboard from './myCourse/dashboard/Dashboard'
-import Quizzes from './myCourse/gradesAndQuizzes/Quizzes'
-import Grades from './myCourse/gradesAndQuizzes/Grades'
-import MyFiles from './myCourse/myFiles/MyFiles'
-import Homework from './myCourse/homework/Homework'
 import Flashcard from './flashcard/Flashcard'
 import Contact_us from './contact_us/Contact_us'
 import { Content } from 'antd/lib/layout/layout'
@@ -24,6 +18,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase/compat/app'
 import { signOut } from 'firebase/auth'
 import DictionaryNav from './dictionary/DictionaryNav'
+import MyCourseNav from './myCourse/MyCourseNav'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
@@ -200,14 +195,7 @@ function App() {
               <Route path='games/snake' element={<ChooseLevel />} />
               <Route path='games/snake/level1' element={<Rule />} />
               <Route path='games/snake/level1/play' element={<SnakePlay />} />
-
-              <Route path='myCourse' element={<MyCourse />}>
-                <Route path='dashBoard' element={<Dashboard />} />
-                <Route path='quizzes' element={<Quizzes />} />
-                <Route path='grades' element={<Grades />} />
-                <Route path='MyFiles' element={<MyFiles />} />
-                <Route path='homework' element={<Homework />} />
-              </Route>
+              <Route path='myCourseNav/*' element={<MyCourseNav />}/>
             </Routes>
           </Content>
         </div>

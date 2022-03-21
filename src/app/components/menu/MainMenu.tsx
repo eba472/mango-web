@@ -67,19 +67,11 @@ function MainMenu() {
         <Menu.Item
           key='3'
           style={menuItemStyle}
-          disabled={true}
           icon={<ContainerOutlined />}
         >
-          <Badge
-            count={t('menu.comingSoon')}
-            size='small'
-            offset={[12, -2]}
-            style={badgeStyle}
-          >
-            <Link to='/myCourse' style={{ fontSize: 20 }}>
+            <Link to='/myCourseNav' style={{ fontSize: 20 }}>
               {t('menu.myCourse')}
             </Link>
-          </Badge>
         </Menu.Item>
 
         <Menu.Item key='4' style={menuItemStyle} icon={<BorderOutlined />}>

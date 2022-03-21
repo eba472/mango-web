@@ -54,5 +54,12 @@
         "pronunciation": "Pronunciation",
         "synonyms": "Synonyms",
         "antonyms": "Antonyms"
+    },
+    "MySourse": {
+        "dashboard": "Dahsboard",
+        "myFile": "My File",
+        "homework": "Homework",
+        "quizzes": "Quizzes",
+        "grades": "Grades"
     }
 }
