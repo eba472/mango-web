@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
-import { Button, Layout, Menu } from 'antd'
+import { Layout, Menu } from 'antd'
 import { useTranslation } from 'react-i18next'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
@@ -9,56 +9,57 @@ import Games from './games/Games'
 import ChooseLevel from './games/games/snake/ChooseLevel'
 import Rule from './games/games/snake/gameRule/Rule'
 import SnakePlay from './games/games/snake/playground/level1'
-import Flashcard from './flashcard/Flashcard'
-import Contact_us from './contact_us/Contact_us'
 import { Content } from 'antd/lib/layout/layout'
 import Registration from './components/header/registration/Registration'
-import './styles.css'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase/compat/app'
 import { signOut } from 'firebase/auth'
 import DictionaryNav from './dictionary/DictionaryNav'
 import MyCourseNav from './myCourse/MyCourseNav'
+import ContactUs from './contactUs/ContactUs'
+import './styles.css'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
 const usePersistedState = (name: string, defaultValue: any) => {
-  const [value, setValue] = React.useState(defaultValue);
-  const nameRef = React.useRef(name);
+  const [value, setValue] = React.useState(defaultValue)
+  const nameRef = React.useRef(name)
 
   React.useEffect(() => {
     try {
-      const storedValue = localStorage.getItem(name);
-      if (storedValue !== null) setValue(storedValue);
-      else localStorage.setItem(name, defaultValue);
+      const storedValue = localStorage.getItem(name)
+      if (storedValue !== null) setValue(storedValue)
+      else localStorage.setItem(name, defaultValue)
     } catch {
-      setValue(defaultValue);
+      setValue(defaultValue)
     }
-  }, []);
+  }, [])
 
   React.useEffect(() => {
     try {
-      localStorage.setItem(nameRef.current, value);
+      localStorage.setItem(nameRef.current, value)
     } catch {}
-  }, [value]);
+  }, [value])
 
   React.useEffect(() => {
-    const lastName = nameRef.current;
+    const lastName = nameRef.current
     if (name !== lastName) {
       try {
-        localStorage.setItem(name, value);
-        nameRef.current = name;
-        localStorage.removeItem(lastName);
+        localStorage.setItem(name, value)
+        nameRef.current = name
+        localStorage.removeItem(lastName)
       } catch {}
     }
-  }, [name]);
+  }, [name])
 
-  return [value, setValue];
-};
+  return [value, setValue]
+}
 
 function App() {
   const { t, i18n } = useTranslation('common')
-  const [language, setLanguage] = usePersistedState('language', [{name: 'mn'}])
+  const [language, setLanguage] = usePersistedState('language', [
+    { name: 'mn' },
+  ])
   const [user] = useAuthState(auth as any)
   console.log('user', user)
   console.log('user?.displayName', user?.displayName)
@@ -114,7 +115,10 @@ function App() {
                     </span>
                   ) : (
                     <span style={{ color: 'black' }}>
-                      {t('TopBar.welcome') + ' '  + user?.displayName + '!        '}
+                      {t('TopBar.welcome') +
+                        ' ' +
+                        user?.displayName +
+                        '!        '}
                     </span>
                   )}
                 </Menu.Item>
@@ -184,18 +188,22 @@ function App() {
           <MainMenu />
           <Content
             className='site-layout'
-            style={{ padding: '0px', marginTop: 64, width: '80%', margin:'80px 40px' }}
+            style={{
+              padding: '0px',
+              marginTop: 64,
+              width: '80%',
+              margin: '80px 40px',
+            }}
           >
             <Routes>
               <Route path='dictionaryNav/*' element={<DictionaryNav />} />
-              <Route path='flashcard' element={<Flashcard />} />
-              <Route path='contact-us' element={<Contact_us />} />
+              <Route path='contact-us' element={<ContactUs />} />
               <Route path='register' element={<Registration />} />
               <Route path='games' element={<Games />} />
               <Route path='games/snake' element={<ChooseLevel />} />
               <Route path='games/snake/level1' element={<Rule />} />
               <Route path='games/snake/level1/play' element={<SnakePlay />} />
-              <Route path='myCourseNav/*' element={<MyCourseNav />}/>
+              <Route path='myCourseNav/*' element={<MyCourseNav />} />
             </Routes>
           </Content>
         </div>

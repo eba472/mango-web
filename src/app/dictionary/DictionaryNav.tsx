@@ -1,42 +1,42 @@
-import React, { useState } from "react";
-import { Menu } from "antd";
-import { Link, Route, Routes } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import React, { useState } from 'react'
+import { Menu } from 'antd'
+import { Link, Route, Routes } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
-import Dictionary from "./tabs/Dictionary";
-import Translation from "./tabs/Translation";
-import Flashcard from "./tabs/Flashcard";
-import Grammar from "./tabs/Grammar";
+import Dictionary from './tabs/Dictionary'
+import Translation from './tabs/Translation'
+import Grammar from './tabs/Grammar'
+import Flashcard from './tabs/flashcard/Flashcard'
 const DictionaryNav = () => {
-  const { t } = useTranslation("common");
-  const [current, setCurrent] = useState("dictionary");
+  const { t } = useTranslation('common')
+  const [current, setCurrent] = useState('dictionary')
   const handleClick = (e: any) => {
-    console.log("click ", e);
-    setCurrent(e.key);
-  };
+    console.log('click ', e)
+    setCurrent(e.key)
+  }
   return (
     <>
       <Menu
         onClick={handleClick}
         selectedKeys={[current]}
-        mode="horizontal"
+        mode='horizontal'
         style={{
-          margin: "50px 0px 40px",
-          display: "flex",
-          justifyContent: "center",
+          margin: '50px 0px 40px',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <Menu.Item key="dictionary">
-          <Link to={`dictionaryNav/dictionary`}>{t("menu.dictionary")}</Link>
+        <Menu.Item key='dictionary'>
+          <Link to={`dictionaryNav/dictionary`}>{t('menu.dictionary')}</Link>
         </Menu.Item>
-        <Menu.Item key="sentenceTranslation">
-          <Link to={`dictionaryNav/translation`}>{t("menu.translation")}</Link>
+        <Menu.Item key='sentenceTranslation'>
+          <Link to={`dictionaryNav/translation`}>{t('menu.translation')}</Link>
         </Menu.Item>
-        <Menu.Item key="flashcard">
-          <Link to={`dictionaryNav/flashcard`}>{t("menu.flashcard")}</Link>
+        <Menu.Item key='flashcard'>
+          <Link to={`dictionaryNav/flashcard`}>{t('menu.flashcard')}</Link>
         </Menu.Item>
-        <Menu.Item key="grammar">
-          <Link to={`dictionaryNav/grammar`}>{t("menu.grammar")}</Link>
+        <Menu.Item key='grammar'>
+          <Link to={`dictionaryNav/grammar`}>{t('menu.grammar')}</Link>
         </Menu.Item>
       </Menu>
       <Routes>
@@ -46,7 +46,7 @@ const DictionaryNav = () => {
         <Route path={`dictionaryNav/grammar`} element={<Grammar />} />
       </Routes>
     </>
-  );
-};
+  )
+}
 
-export default DictionaryNav;
+export default DictionaryNav
