@@ -6,13 +6,11 @@ const { Panel } = Collapse
 
 const Meanings = ({ meanings, callback }: { meanings: any; callback: any }) => {
   const { t } = useTranslation('common')
-  console.log('meaning, callbackd :>> ', meanings, callback)
   return (
     <div>
       {meanings &&
         meanings.length > 0 &&
         meanings?.map((meaning: any) => {
-          console.log('1 :>> ', 1)
           return (
             <Collapse
               defaultActiveKey={['1']}

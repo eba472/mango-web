@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd'
 import { useTranslation } from 'react-i18next'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
+import firebase from 'firebase/compat/app'
 import MainMenu from './components/menu/MainMenu'
 import Games from './games/Games'
 import ChooseLevel from './games/games/snake/ChooseLevel'
@@ -12,7 +13,6 @@ import SnakePlay from './games/games/snake/playground/level1'
 import { Content } from 'antd/lib/layout/layout'
 import Registration from './components/header/registration/Registration'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import firebase from 'firebase/compat/app'
 import { signOut } from 'firebase/auth'
 import MyCourseNav from './myCourse/MyCourseNav'
 import ContactUs from './contactUs/ContactUs'
@@ -61,8 +61,6 @@ function App() {
     { name: 'mn' },
   ])
   const [user] = useAuthState(auth as any)
-  console.log('user', user)
-  console.log('user?.displayName', user?.displayName)
 
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
@@ -70,7 +68,6 @@ function App() {
   }
   const googleSignout = () => {
     signOut(auth)
-    console.log('user :>> ', user)
   }
   return (
     <Router>
