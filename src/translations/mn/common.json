@@ -59,8 +59,9 @@
         "dashboard": "Хяналтын самбар",
         "myFile": " Миний хавтас",
         "homework": "Гэрийн даалгавар",
-        "quizzes": "Aсуултууд ",
-        "grade": "Дүн"
+        "quizzes": "Дасгал ажил ",
+        "grade": "Дүн",
+        "QuizzesandGrades": "Дасгал ажил & Дүн"
 
     },
     "Flashcard": {

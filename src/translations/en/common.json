@@ -6,7 +6,7 @@
         "typing": "Typing",
         "games": "Games",
         "pronunciation": "Pronunciation",
-        "grammar": "Grammer",
+        "grammar": "Grammar",
         "idioms": "Idioms",
         "changeLanguage": "Languages",
         "english": "English",
@@ -60,7 +60,8 @@
         "myFile": "My File",
         "homework": "Homework",
         "quizzes": "Quizzes",
-        "grades": "Grades"
+        "grades": "Grades",
+        "QuizzesandGrades": "Quizzes & Grades"
     },
     "Flashcard": {
         "nextButton": "Next",

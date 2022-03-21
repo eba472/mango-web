@@ -36,7 +36,7 @@ function MainMenu() {
       onMouseLeave={() => setToggleCollapsed(true)}
     >
       <Menu
-        defaultSelectedKeys={['1']}
+        // defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode='vertical'
         theme='light'

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Table, Space } from 'antd';
+import { Table, Space, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { ColumnType } from 'antd/lib/table';
 import { LockOutlined } from '@ant-design/icons';
-import HomeworkQuestion from './HomeworkQuestion';
+import HomeworkModal from './HomeworkModal';
 
 const data = [
   {
@@ -34,7 +34,7 @@ const columns: ColumnType<object>[] = [
     dataIndex: 'name',
     key: 'name',
     render: (name: string) => {
-      return <HomeworkQuestion />
+      return <HomeworkModal/>
       // <Link to={`/myCourse/Exam/${name}`} >{name}</Link>
     },
   },
@@ -74,6 +74,7 @@ const Homework = () => {
 
   return <div>
     <Table columns={columns} dataSource={data} style={{ width: '900px', backgroundColor: '#4E89AE' }} />
+    
   </div>
 }
 

@@ -14,6 +14,7 @@ import Quizzes from './tabs/gradesAndQuizzes/Quizzes'
 import MyFiles from './tabs/myFiles/MyFiles'
 import Homework from './tabs/homework/Homework'
 import Grades from './tabs/gradesAndQuizzes/Grades'
+import HomeworkModal from './tabs/homework/HomeworkModal'
 
 const MyCourseNav = () => {
   const { t } = useTranslation("common");
@@ -42,7 +43,7 @@ const MyCourseNav = () => {
         <Menu.Item key='Dashboard' icon={<PieChartOutlined />}>
           <Link to={`myCourseNav/Dashboard`}>{t("MySourse.dashboard")}</Link>
         </Menu.Item>
-        <SubMenu key='Quizzes and Grades' icon={<MailOutlined />} title='Quizzes and Grades' style={{ marginTop:'16px' }}>
+        <SubMenu key='QuizzesandGrades' icon={<MailOutlined />} title={t("MySourse.QuizzesandGrades")} style={{ marginTop:'16px' }}>
           <Menu.Item key='Quizzes'>
           <Link to={`myCourseNav/Quizzes`}>{t("MySourse.quizzes")}</Link>
           </Menu.Item>
