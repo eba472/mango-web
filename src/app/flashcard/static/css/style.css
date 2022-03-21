@@ -1,0 +1,24 @@
+.card-front, .card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.card-back {
+  background-color: #e0a800;
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  margin: auto; 
+  
+}
+
+.card-front {
+  background-color: #ffc107;
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  margin: auto;
+}

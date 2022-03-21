@@ -62,6 +62,10 @@
         "quizzes": "Aсуултууд ",
         "grade": "Дүн"
 
-
+    },
+    "Flashcard": {
+        "nextButton": "Дараагийх",
+        "prevButton": "Өмнөх",
+        "noMoreFlashcards": "Өөр флашкарт байхгүй байна"
     }
 }

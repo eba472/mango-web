@@ -61,5 +61,10 @@
         "homework": "Homework",
         "quizzes": "Quizzes",
         "grades": "Grades"
+    },
+    "Flashcard": {
+        "nextButton": "Next",
+        "prevButton": "Previous",
+        "noMoreFlashcards": "There is no more flashcards"
     }
 }
