@@ -5,8 +5,6 @@ import {
   ContainerOutlined,
   DesktopOutlined,
   PieChartOutlined,
-  UserAddOutlined,
-  BorderOutlined,
   ContactsOutlined,
 } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
@@ -43,7 +41,7 @@ function MainMenu() {
         inlineCollapsed={toggleCollapsed}
       >
         <Menu.Item key='1' style={menuItemStyle} icon={<PieChartOutlined />}>
-          <Link to='/dictionaryNav'>{t('menu.dictionary')}</Link>
+          <Link to='/dict/dictionary'>{t('menu.dictionary')}</Link>
         </Menu.Item>
 
         <Menu.Item
@@ -72,9 +70,6 @@ function MainMenu() {
         <Menu.Item key='5' style={menuItemStyle} icon={<ContactsOutlined />}>
           <Link to='/contact-us'>{t('menu.contact-us')}</Link>
         </Menu.Item>
-        {/* <Menu.Item key='4' style={menuItemStyle} icon={<UserAddOutlined />}>
-          <Link to='/register'>{t('LeftDiv.signIn')}</Link>
-        </Menu.Item> */}
       </Menu>
     </div>
   )

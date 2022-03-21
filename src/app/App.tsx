@@ -14,10 +14,10 @@ import Registration from './components/header/registration/Registration'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase/compat/app'
 import { signOut } from 'firebase/auth'
-import DictionaryNav from './dictionary/DictionaryNav'
 import MyCourseNav from './myCourse/MyCourseNav'
 import ContactUs from './contactUs/ContactUs'
 import './styles.css'
+import DictionaryMenu from './dictionary/DictionaryMenu'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
@@ -196,7 +196,7 @@ function App() {
             }}
           >
             <Routes>
-              <Route path='dictionaryNav/*' element={<DictionaryNav />} />
+              <Route path='dict/*' element={<DictionaryMenu />} />
               <Route path='contact-us' element={<ContactUs />} />
               <Route path='register' element={<Registration />} />
               <Route path='games' element={<Games />} />

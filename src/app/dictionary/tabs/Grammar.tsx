@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Grammer = () => {
+const Grammar = () => {
   return (
     <div>Grammar</div>
   )
 }
 
-export default Grammer
+export default Grammar
