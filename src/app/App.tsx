@@ -18,6 +18,7 @@ import MyCourseNav from './myCourse/MyCourseNav'
 import ContactUs from './contactUs/ContactUs'
 import './styles.css'
 import DictionaryMenu from './dictionary/DictionaryMenu'
+import FrontPage from './components/frontPage/FrontPage'
 
 const { Header, Footer } = Layout
 const auth = firebase.auth()
@@ -193,6 +194,7 @@ function App() {
             }}
           >
             <Routes>
+              <Route path='/' element={<FrontPage />} />
               <Route path='dict/*' element={<DictionaryMenu />} />
               <Route path='contact-us' element={<ContactUs />} />
               <Route path='register' element={<Registration />} />
