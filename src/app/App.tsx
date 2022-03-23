@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import { Button, Dropdown, Layout, Menu, Space } from 'antd'
 import { useTranslation } from 'react-i18next'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
@@ -70,6 +70,32 @@ function App() {
   const googleSignout = () => {
     signOut(auth)
   }
+
+  const menu = (
+    <Menu style={{ width: 150 }} defaultSelectedKeys={['1']} mode="inline">
+      <Menu.Item
+        key="1"
+        style={{
+          color: 'black',
+          fontFamily: 'Light ltalic',
+          fontSize: '15px',
+        }}
+      >
+        {user?.displayName}
+        {/* {t('TopBar.welcome') + ' ' + user?.displayName + '!        '} */}
+      </Menu.Item>
+      <Menu.Item>My Flashcard</Menu.Item>
+      <Menu.Item key="2">
+        {' '}
+        {user && (
+          <span style={{ color: 'black' }} onClick={() => googleSignout()}>
+            {t('TopBar.signOut')}
+          </span>
+        )}
+      </Menu.Item>
+    </Menu>
+  )
+
   return (
     <Router>
       <Layout>
@@ -82,7 +108,7 @@ function App() {
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div style={{ width: '100%' }}>
+            <div style={{ width: '100%', height: '75px' }}>
               <Menu
                 mode='horizontal'
                 style={{
@@ -106,37 +132,13 @@ function App() {
                     ></img>
                   </Menu.Item>
                 </Link>
-                <Menu.Item key='1'>
-                  {!user ? (
-                    <span style={{ color: 'black' }} onClick={signInWithGoogle}>
-                      {t('TopBar.signInMessage')}
-                    </span>
-                  ) : (
-                    <span style={{ color: 'black' }}>
-                      {t('TopBar.welcome') +
-                        ' ' +
-                        user?.displayName +
-                        '!        '}
-                    </span>
-                  )}
-                </Menu.Item>
-                <Menu.Item key='2'>
-                  {user && (
-                    <span
-                      style={{ color: 'black' }}
-                      onClick={() => googleSignout()}
-                    >
-                      {t('TopBar.signOut')}
-                    </span>
-                  )}
-                </Menu.Item>
               </Menu>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <Menu
                 mode='horizontal'
                 style={{
-                  width: '150px',
+                  width: '250px',
                 }}
               >
                 {language === 'mn' ? (
@@ -147,16 +149,7 @@ function App() {
                       setLanguage('en')
                     }}
                   >
-                    <img
-                      src='/english-dict-round-sign.png'
-                      alt='imgEngFlag'
-                      style={{
-                        width: '64px',
-                        height: '50px',
-                        padding: '5px',
-                        marginLeft: '18px',
-                      }}
-                    ></img>
+                    🇬🇧 English
                   </Menu.Item>
                 ) : (
                   <Menu.Item
@@ -166,18 +159,36 @@ function App() {
                       setLanguage('mn')
                     }}
                   >
-                    <img
-                      src='/mongolia-dict-round-sign.png'
-                      alt='imgMnFlag'
-                      style={{
-                        width: '64px',
-                        height: '50px',
-                        padding: '5px',
-                        marginLeft: '18px',
-                      }}
-                    ></img>
+                    🇲🇳 Mongolia
                   </Menu.Item>
                 )}
+
+                <Menu.Item key='1'>
+                  {!user ? (
+                    <div>
+                      <span
+                        style={{ color: 'black' }}
+                        onClick={signInWithGoogle}
+                      >
+                        {t('LeftDiv.signIn')}
+                      </span>
+                    </div>
+                  ) : (
+                    <Space direction='vertical'>
+                      <Dropdown overlay={menu} placement='bottomRight'>
+                        <img
+                          src='./user.png'
+                          alt='userImg'
+                          style={{
+                            marginBottom: '5px',
+                            width: '35px',
+                            height: '35px',
+                          }}
+                        />
+                      </Dropdown>
+                    </Space>
+                  )}
+                </Menu.Item>
               </Menu>
             </div>
           </div>
