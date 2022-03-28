@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Search from 'antd/lib/input/Search'
-
 const SearchComponent = ({
   setSearchValue,
   searchValue,
@@ -24,8 +23,10 @@ const SearchComponent = ({
         placeholder={t('SearchComponent.inputSearchWord')}
         allowClear
         defaultValue={searchValue}
+        value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         style={{ width: 800, padding: 20 }}
+        
       />
     </div>
   )

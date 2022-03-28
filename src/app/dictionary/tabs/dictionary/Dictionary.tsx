@@ -49,7 +49,7 @@ const Dictionary = () => {
             <DictionaryMain word={wordInfo?.word} def={wordInfo?.meanings[0].definitions[0].definition} />
             <Phonetics phonetics={wordInfo?.phonetics} />
             <p>{wordInfo?.origin}</p>
-            <Meanings meanings={wordInfo?.meanings} callback={callback} />
+            <Meanings meanings={wordInfo?.meanings} callback={callback} setSearchValue={setSearchValue} searchValue={searchValue}/>
           </Panel>
         </Collapse>
       )}

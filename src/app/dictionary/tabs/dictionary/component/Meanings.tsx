@@ -1,10 +1,21 @@
 import { Button, Collapse } from 'antd'
+import Search from 'antd/lib/input/Search'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 const { Panel } = Collapse
 
-const Meanings = ({ meanings, callback }: { meanings: any; callback: any }) => {
+const Meanings = ({
+  meanings,
+  callback,
+  setSearchValue,
+  searchValue,
+}: {
+  meanings: any
+  callback: any
+  setSearchValue: any
+  searchValue: string
+}) => {
   const { t } = useTranslation('common')
   return (
     <div>
@@ -17,7 +28,7 @@ const Meanings = ({ meanings, callback }: { meanings: any; callback: any }) => {
               onChange={callback}
               style={{ padding: '20px' }}
             >
-              <Panel header={meaning.partOfSpeech} key='1'>
+              <Panel header={meaning.partOfSpeech} key="1">
                 <div>
                   {meaning.definitions.map((def: any) => {
                     return (
@@ -37,7 +48,13 @@ const Meanings = ({ meanings, callback }: { meanings: any; callback: any }) => {
                         <p>{t('Dictionary.synonyms')}</p>
                         <div>
                           {meaning.synonyms.map((synonym: any) => {
-                            return <Button>{synonym}</Button>
+                            return (
+                              <>
+                                <Button onClick={()=>setSearchValue(synonym) }>
+                                  {synonym}
+                                </Button>
+                              </>
+                            )
                           })}
                         </div>
                       </>
