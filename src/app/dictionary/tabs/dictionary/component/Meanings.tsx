@@ -50,7 +50,13 @@ const Meanings = ({
                           {meaning.synonyms.map((synonym: any) => {
                             return (
                               <>
-                                <Button onClick={()=>setSearchValue(synonym) }>
+                                <Button
+                                  onClick={() => {
+                                    setSearchValue(synonym)
+                                    document.body.scrollTop = 0;
+                                    document.documentElement.scrollTop = 0;
+                                  }}
+                                >
                                   {synonym}
                                 </Button>
                               </>

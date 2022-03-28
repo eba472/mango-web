@@ -24,6 +24,7 @@ const SearchComponent = ({
         allowClear
         defaultValue={searchValue}
         value={searchValue}
+        
         onChange={(e) => setSearchValue(e.target.value)}
         style={{ width: 800, padding: 20 }}
         
